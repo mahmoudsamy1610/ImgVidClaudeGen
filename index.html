@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0a0a0f;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, #16161f 0%, #0a0a0f 70%);
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      #title,
+      #subtitle {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      #title {
+        top: 400px;
+        color: #f4f4f5;
+        font-size: 120px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+      #subtitle {
+        top: 572px;
+        color: #a1a1aa;
+        font-size: 44px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">
+        Made with HyperFrames
+      </h1>
+      <p id="subtitle" class="clip" data-start="0" data-duration="10" data-track-index="1">
+        Edit index.html, render to MP4
+      </p>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Title fades in
+      tl.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0.5);
+      // Subtitle slides up
+      tl.fromTo(
+        "#subtitle",
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+        1.6,
+      );
+      // Smooth fade-out at the end
+      tl.to(["#title", "#subtitle"], { opacity: 0, duration: 1.2, ease: "power2.inOut" }, 8.6);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

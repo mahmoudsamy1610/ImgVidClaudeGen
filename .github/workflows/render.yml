@@ -1,0 +1,53 @@
+name: Render video
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write # needed to create a release and attach video.mp4 on tag pushes
+
+env:
+  # Keep in sync with the version pinned in package.json scripts.
+  HYPERFRAMES_VERSION: 0.8.106
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Ensure render browser
+        run: npx --yes hyperframes@${HYPERFRAMES_VERSION} browser ensure
+
+      - name: Lint composition
+        run: npx --yes hyperframes@${HYPERFRAMES_VERSION} lint
+
+      - name: Render video
+        run: npx --yes hyperframes@${HYPERFRAMES_VERSION} render --quality high --output video.mp4
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: video
+          path: video.mp4
+          if-no-files-found: error
+
+      - name: Attach video to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: video.mp4
