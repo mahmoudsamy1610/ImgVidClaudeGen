@@ -1,0 +1,68 @@
+name: Generate narration
+
+# Regenerates assets/audio/narration/*.mp3 from story/narration.tsv and commits
+# them back to the branch, together with story/narration-durations.tsv.
+# Uses Microsoft Edge's online read-aloud voices through the edge-tts tool.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+    paths:
+      - story/narration.tsv
+      - .github/workflows/narration.yml
+
+permissions:
+  contents: write # needed to commit the generated audio back to the branch
+
+concurrency:
+  group: narration-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VOICE: ar-EG-SalmaNeural
+  RATE: "-8%"
+
+jobs:
+  narration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install FFmpeg and edge-tts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install edge-tts==7.2.8
+
+      - name: Generate narration clips
+        run: |
+          mkdir -p narration-tmp assets/audio/narration
+          : > story/narration-durations.tsv
+          while IFS=$'\t' read -r id text; do
+            [ -z "$id" ] && continue
+            edge-tts --voice "$VOICE" --rate="$RATE" --text "$text" --write-media "narration-tmp/$id.mp3" < /dev/null
+            ffmpeg -nostdin -v error -y -i "narration-tmp/$id.mp3" -ac 1 -ar 44100 -b:a 96k "assets/audio/narration/$id.mp3"
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "assets/audio/narration/$id.mp3")
+            printf '%s\t%s\n' "$id" "$dur" >> story/narration-durations.tsv
+            echo "$id: ${dur}s"
+          done < story/narration.tsv
+          rm -rf narration-tmp
+
+      - name: Commit generated audio
+        run: |
+          git add assets/audio/narration story/narration-durations.tsv
+          if git diff --cached --quiet; then
+            echo "Narration unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Regenerate narration ($VOICE)"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
