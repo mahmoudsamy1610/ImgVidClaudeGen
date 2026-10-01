@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Rendered videos
+*.mp4
+*.webm
+
+# Render output folders
+renders/
+.debug/
