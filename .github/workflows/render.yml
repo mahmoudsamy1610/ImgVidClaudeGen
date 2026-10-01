@@ -3,11 +3,18 @@ name: Render video
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "**"
     tags:
       - "v*"
 
 permissions:
-  contents: write # needed to create a release and attach video.mp4 on tag pushes
+  contents: write # needed to publish preview and version releases with video.mp4
+
+# A newer push to the same branch cancels a render that is still running.
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   # Keep in sync with the version pinned in package.json scripts.
@@ -40,14 +47,49 @@ jobs:
         run: npx --yes hyperframes@${HYPERFRAMES_VERSION} render --quality high --output video.mp4
 
       - name: Upload video artifact
+        id: artifact
         uses: actions/upload-artifact@v4
         with:
           name: video
           path: video.mp4
           if-no-files-found: error
 
+      # Every branch push replaces that branch's preview pre-release, so its
+      # download link stays the same and always serves the latest render.
+      - name: Publish branch preview release
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          TAG="preview-${BRANCH//\//-}"
+          gh release delete "$TAG" --cleanup-tag --yes || true
+          gh release create "$TAG" video.mp4 \
+            --prerelease \
+            --target "$GITHUB_SHA" \
+            --title "Preview: $BRANCH" \
+            --notes "Latest render of \`$BRANCH\` at commit $GITHUB_SHA."
+          echo "PREVIEW_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$TAG/video.mp4" >> "$GITHUB_ENV"
+
       - name: Attach video to GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           files: video.mp4
+
+      - name: Write download links to run summary
+        env:
+          ARTIFACT_URL: ${{ steps.artifact.outputs.artifact-url }}
+        run: |
+          {
+            echo "## Download the video"
+            echo ""
+            echo "- Artifact for this run (zip): $ARTIFACT_URL"
+            if [ -n "${PREVIEW_URL:-}" ]; then
+              echo "- Latest MP4 for \`$GITHUB_REF_NAME\` (stable link): $PREVIEW_URL"
+            fi
+            if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+              echo "- Release: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$GITHUB_REF_NAME"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

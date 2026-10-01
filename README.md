@@ -54,10 +54,11 @@ npx hyperframes render --quality high --output video.mp4    # final quality
 
 ## Render on GitHub Actions
 
-The workflow in `.github/workflows/render.yml` lints the composition, renders `video.mp4` at high quality, and uploads it as a workflow artifact. It runs in two cases:
+The workflow in `.github/workflows/render.yml` lints the composition, renders `video.mp4` at high quality, and publishes it. It runs in three cases:
 
-- **Manually**: on the repo's **Actions** tab, pick **Render video**, then **Run workflow**.
-- **On a version tag**: push a tag that starts with `v`. The video is also attached to a GitHub Release for that tag.
+- **On every push to any branch.** The video is uploaded as an artifact, and the branch's preview pre-release (`preview-<branch>`, with `/` replaced by `-`) is replaced with the new render. If you push again while a render is still running, the older run is cancelled.
+- **Manually.** On the repo's **Actions** tab, pick **Render video**, then **Run workflow**.
+- **On a version tag.** Push a tag that starts with `v`. The video is also attached to a GitHub Release for that tag.
 
   ```bash
   git tag v1.0.0
@@ -66,5 +67,16 @@ The workflow in `.github/workflows/render.yml` lints the composition, renders `v
 
 ## Download the MP4
 
-- **From any run**: open the run on the **Actions** tab and download the `video` artifact under **Artifacts**. GitHub delivers it as a zip that contains `video.mp4`. Artifacts expire after 90 days by default.
-- **From a release**: open **Releases** and download `video.mp4` from the release's assets.
+Every run lists its download links in the run's **Summary** on the **Actions** tab.
+
+- **Latest render of a branch (stable link).** Each branch has a link that always serves its newest render as a plain MP4:
+
+  ```
+  https://github.com/mahmoudsamy1610/HyperFrameClaude/releases/download/preview-main/video.mp4
+  ```
+
+  For another branch, replace `main` with the branch name, with `/` replaced by `-`. The previews are also listed under **Releases**, marked as pre-releases.
+- **A specific run.** Open the run on the **Actions** tab and download the `video` artifact under **Artifacts**. GitHub delivers it as a zip that contains `video.mp4`. Artifacts expire after 90 days by default.
+- **A version release.** Open **Releases** and download `video.mp4` from the release's assets.
+
+The repository is private, so all of these links only work for people signed in to GitHub with access to the repo.
