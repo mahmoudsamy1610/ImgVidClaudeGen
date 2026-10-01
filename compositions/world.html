@@ -118,16 +118,16 @@
 
       <script>
         const tl = gsap.timeline({ paused: true });
-        // The sun sets across the story and touches the hills at ~44s (scene 7).
-        tl.fromTo("#world-sun", { y: 0 }, { y: 350, duration: 44, ease: "none" }, 0);
-        tl.to("#world-sun", { y: 720, duration: 14, ease: "none" }, 44);
-        tl.to("#world-sky-sunset", { opacity: 1, duration: 14, ease: "sine.inOut" }, 30);
-        tl.to("#world-sky-dusk", { opacity: 0.85, duration: 9, ease: "sine.inOut" }, 49);
-        tl.to("#world-dim", { opacity: 0.18, duration: 9, ease: "sine.inOut" }, 49);
+        // The sun sets across the story and touches the hills at ~73s (scene 7).
+        tl.fromTo("#world-sun", { y: 0 }, { y: 350, duration: 73, ease: "none" }, 0);
+        tl.to("#world-sun", { y: 720, duration: 25, ease: "none" }, 73);
+        tl.to("#world-sky-sunset", { opacity: 1, duration: 23, ease: "sine.inOut" }, 50);
+        tl.to("#world-sky-dusk", { opacity: 0.85, duration: 16, ease: "sine.inOut" }, 82);
+        tl.to("#world-dim", { opacity: 0.18, duration: 16, ease: "sine.inOut" }, 82);
         // Clouds drift slowly.
-        tl.fromTo("#world-cloud-a", { x: 0 }, { x: 260, duration: 58, ease: "none" }, 0);
-        tl.fromTo("#world-cloud-b", { x: 0 }, { x: 180, duration: 58, ease: "none" }, 0);
-        tl.fromTo("#world-cloud-c", { x: 0 }, { x: -140, duration: 58, ease: "none" }, 0);
+        tl.fromTo("#world-cloud-a", { x: 0 }, { x: 420, duration: 98, ease: "none" }, 0);
+        tl.fromTo("#world-cloud-b", { x: 0 }, { x: 300, duration: 98, ease: "none" }, 0);
+        tl.fromTo("#world-cloud-c", { x: 0 }, { x: -240, duration: 98, ease: "none" }, 0);
         window.__timelines["world"] = tl;
       </script>
     </template>

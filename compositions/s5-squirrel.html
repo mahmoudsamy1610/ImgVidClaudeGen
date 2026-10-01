@@ -6,11 +6,25 @@
   <body>
     <template>
       <style>
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-arabic-800-normal.woff2") format("woff2");
+          unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+        }
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-latin-800-normal.woff2") format("woff2");
+          unicode-range: U+0000-00FF, U+2000-206F;
+        }
         #root {
           position: absolute;
           inset: 0;
           overflow: hidden;
-          font-family: Nunito, sans-serif;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
         }
         .stage {
           position: absolute;
@@ -62,11 +76,10 @@
           position: absolute;
           background: #ffffff;
           color: #3b2a55;
-          font-weight: 900;
+          font-weight: 800;
           font-size: 56px;
-          line-height: 1;
-          letter-spacing: -0.01em;
-          padding: 26px 44px;
+          line-height: 1.35;
+          padding: 14px 44px 18px;
           border-radius: 48px;
           box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
           white-space: nowrap;
@@ -144,29 +157,30 @@
             <path d="M212 144 Q220 150 228 142" stroke="#3b2a55" stroke-width="4" fill="none" stroke-linecap="round" />
           </svg>
         </div>
-        <div id="s5-squirrel-bubble" class="bubble" style="left: 940px; top: 450px">Too slow, Benny!</div>
+        <div id="s5-squirrel-bubble" class="bubble" dir="rtl" lang="ar" style="left: 940px; top: 430px">بطيء قوي يا بيني!</div>
         </div>
       </div>
 
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo("#s5-squirrel-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
-        tl.to("#s5-squirrel-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 7.6);
-        tl.fromTo("#s5-squirrel-benny", { x: 0 }, { x: 220, duration: 7.4, ease: "none" }, 0.2);
-        tl.to("#s5-squirrel-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 13, yoyo: true }, 0.2);
-        // "Then came Squirrel"
+        tl.to("#s5-squirrel-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 15.6);
+        tl.fromTo("#s5-squirrel-benny", { x: 0 }, { x: 260, duration: 15.4, ease: "none" }, 0.2);
+        tl.to("#s5-squirrel-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 29, yoyo: true }, 0.2);
+        // "وبعدين جت السنجابة"
         tl.set("#s5-squirrel-squirrel", { x: -900, y: 0 }, 0);
-        tl.to("#s5-squirrel-squirrel", { x: 0, duration: 1.1, ease: "power2.out" }, 0.5);
-        tl.to("#s5-squirrel-squirrel", { y: -40, duration: 0.15, ease: "sine.out", yoyo: true, repeat: 7 }, 0.5);
-        tl.fromTo("#s5-squirrel-bubble", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 1.8);
-        tl.to("#s5-squirrel-bubble", { opacity: 0, duration: 0.25 }, 3.3);
-        // "...off she scampered"
-        tl.to("#s5-squirrel-squirrel", { x: 280, duration: 0.55, ease: "power3.in" }, 3.5);
-        // "...found a pile of acorns, and stopped to play"
-        tl.fromTo("#s5-squirrel-acorns", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 4.6);
-        tl.to("#s5-squirrel-squirrel", { x: 340, duration: 0.5, ease: "power2.out" }, 4.05);
-        tl.to("#s5-squirrel-squirrel", { y: -50, duration: 0.22, ease: "sine.out", yoyo: true, repeat: 9 }, 5.0);
-        // Rabbit's carrots are still there in the distance, Rabbit is still munching
+        tl.to("#s5-squirrel-squirrel", { x: 0, duration: 1.4, ease: "power2.out" }, 0.8);
+        tl.to("#s5-squirrel-squirrel", { y: -40, duration: 0.15, ease: "sine.out", yoyo: true, repeat: 9 }, 0.8);
+        // «إنت بطيء قوي يا بيني! بص عليّا!»
+        tl.fromTo("#s5-squirrel-bubble", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 3.6);
+        tl.to("#s5-squirrel-bubble", { opacity: 0, duration: 0.25 }, 7.8);
+        // "ونطت بسرعة"
+        tl.to("#s5-squirrel-squirrel", { x: 280, duration: 0.55, ease: "power3.in" }, 8.1);
+        // "بس السنجابة لقت كومة بلوط، فوقفت تلعب"
+        tl.to("#s5-squirrel-squirrel", { x: 340, duration: 0.5, ease: "power2.out" }, 10.4);
+        tl.fromTo("#s5-squirrel-acorns", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 10.6);
+        tl.to("#s5-squirrel-squirrel", { y: -50, duration: 0.22, ease: "sine.out", yoyo: true, repeat: 9 }, 13.6);
+        // Rabbit's carrots are still there in the distance
         tl.fromTo("#s5-squirrel-carrots", { opacity: 0 }, { opacity: 0.9, duration: 0.4 }, 0);
 
         window.__timelines["s5-squirrel"] = tl;

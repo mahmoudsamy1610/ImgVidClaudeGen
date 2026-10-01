@@ -6,11 +6,25 @@
   <body>
     <template>
       <style>
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-arabic-800-normal.woff2") format("woff2");
+          unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+        }
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-latin-800-normal.woff2") format("woff2");
+          unicode-range: U+0000-00FF, U+2000-206F;
+        }
         #root {
           position: absolute;
           inset: 0;
           overflow: hidden;
-          font-family: Nunito, sans-serif;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
         }
         .stage {
           position: absolute;
@@ -62,11 +76,10 @@
           position: absolute;
           background: #ffffff;
           color: #3b2a55;
-          font-weight: 900;
+          font-weight: 800;
           font-size: 56px;
-          line-height: 1;
-          letter-spacing: -0.01em;
-          padding: 26px 44px;
+          line-height: 1.35;
+          padding: 14px 44px 18px;
           border-radius: 48px;
           box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
           white-space: nowrap;
@@ -160,26 +173,27 @@
         <svg id="s7-arrival-spark-2" class="sparkle" style="left: 1260px; top: 430px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ff8fbf" /></svg>
         <svg id="s7-arrival-spark-3" class="sparkle" style="left: 1600px; top: 640px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
         <svg id="s7-arrival-spark-4" class="sparkle" style="left: 1100px; top: 700px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffffff" /></svg>
-        <div id="s7-arrival-bubble" class="bubble" style="left: 1260px; top: 300px">Happy birthday!</div>
+        <div id="s7-arrival-bubble" class="bubble" dir="rtl" lang="ar" style="left: 1180px; top: 280px">كل سنة وإنت طيب!</div>
         </div>
       </div>
 
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo("#s7-arrival-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
-        tl.to("#s7-arrival-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 7.6);
-        tl.fromTo("#s7-arrival-benny", { x: -700 }, { x: 0, duration: 3.2, ease: "sine.out" }, 0.1);
-        tl.to("#s7-arrival-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 5, yoyo: true }, 0.1);
-        // The door swings open and Little Mouse pops out on "Happy birthday!"
+        tl.to("#s7-arrival-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 12.6);
+        // "بيني وصل لباب الفار الصغير"
+        tl.fromTo("#s7-arrival-benny", { x: -700 }, { x: 0, duration: 5.6, ease: "sine.out" }, 0.1);
+        tl.to("#s7-arrival-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.1);
+        // The door swings open and Little Mouse pops out on «كل سنة وإنت طيب!»
         tl.set("#s7-arrival-mouse", { opacity: 0, y: 40, scale: 0.6 }, 0);
-        tl.to("#s7-arrival-door", { scaleX: 0.1, duration: 0.4, ease: "power2.out" }, 4.1);
-        tl.to("#s7-arrival-mouse", { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 4.3);
-        tl.fromTo("#s7-arrival-bubble", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 4.4);
-        tl.fromTo("#s7-arrival-spark-0, #s7-arrival-spark-1, #s7-arrival-spark-2, #s7-arrival-spark-3, #s7-arrival-spark-4", { opacity: 0, scale: 0, rotation: -60 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 4.5);
-        // "The leaf was perfect." - the leaf floats from Benny's shell to Little Mouse
-        tl.to("#s7-arrival-leaf", { x: 470, y: -40, rotation: -10, duration: 1.0, ease: "power2.inOut" }, 5.6);
-        tl.to("#s7-arrival-mouse", { y: -30, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 6.4);
-        tl.to("#s7-arrival-benny", { y: -20, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 1 }, 6.6);
+        tl.to("#s7-arrival-door", { scaleX: 0.1, duration: 0.4, ease: "power2.out" }, 6.9);
+        tl.to("#s7-arrival-mouse", { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 7.1);
+        tl.fromTo("#s7-arrival-bubble", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 7.25);
+        tl.fromTo("#s7-arrival-spark-0, #s7-arrival-spark-1, #s7-arrival-spark-2, #s7-arrival-spark-3, #s7-arrival-spark-4", { opacity: 0, scale: 0, rotation: -60 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 7.4);
+        // "والورقة كانت حلوة خالص" - the leaf floats from Benny's shell to Little Mouse
+        tl.to("#s7-arrival-leaf", { x: 470, y: -40, rotation: -10, duration: 1.0, ease: "power2.inOut" }, 9.4);
+        tl.to("#s7-arrival-mouse", { y: -30, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 10.4);
+        tl.to("#s7-arrival-benny", { y: -20, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 1 }, 10.6);
 
         window.__timelines["s7-arrival"] = tl;
       </script>

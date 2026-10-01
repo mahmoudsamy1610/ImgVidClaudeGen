@@ -6,11 +6,25 @@
   <body>
     <template>
       <style>
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-arabic-800-normal.woff2") format("woff2");
+          unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+        }
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-latin-800-normal.woff2") format("woff2");
+          unicode-range: U+0000-00FF, U+2000-206F;
+        }
         #root {
           position: absolute;
           inset: 0;
           overflow: hidden;
-          font-family: Nunito, sans-serif;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
         }
         .stage {
           position: absolute;
@@ -62,11 +76,10 @@
           position: absolute;
           background: #ffffff;
           color: #3b2a55;
-          font-weight: 900;
+          font-weight: 800;
           font-size: 56px;
-          line-height: 1;
-          letter-spacing: -0.01em;
-          padding: 26px 44px;
+          line-height: 1.35;
+          padding: 14px 44px 18px;
           border-radius: 48px;
           box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
           white-space: nowrap;
@@ -142,13 +155,14 @@
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo("#s6-journey-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
-        tl.to("#s6-journey-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 6.1);
-        // Over the pebbles and under the ferns, Benny keeps going
-        tl.fromTo("#s6-journey-benny", { x: -200 }, { x: 1500, duration: 6.3, ease: "none" }, 0.1);
-        tl.to("#s6-journey-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.1);
-        tl.to("#s6-journey-benny", { y: -50, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 1 }, 1.6);
-        tl.to("#s6-journey-fern-1", { rotation: -5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 2.8);
-        tl.to("#s6-journey-fern-2", { rotation: 5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 3.2);
+        tl.to("#s6-journey-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 9.1);
+        // "فوق الزلط وتحت الزرع" - over the pebbles, then under the ferns
+        tl.fromTo("#s6-journey-benny", { x: -200 }, { x: 1500, duration: 9.3, ease: "none" }, 0.1);
+        tl.to("#s6-journey-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 17, yoyo: true }, 0.1);
+        tl.to("#s6-journey-benny", { y: -50, duration: 0.8, ease: "sine.inOut" }, 2.4);
+        tl.to("#s6-journey-benny", { y: 0, duration: 0.6, ease: "sine.inOut" }, 6.4);
+        tl.to("#s6-journey-fern-1", { rotation: -5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3 }, 6.0);
+        tl.to("#s6-journey-fern-2", { rotation: 5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3 }, 6.6);
 
         window.__timelines["s6-journey"] = tl;
       </script>

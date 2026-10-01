@@ -2,13 +2,13 @@
 
 A [HyperFrames](https://hyperframes.heygen.com) project that renders an HTML composition to MP4.
 
-The current video is **Benny the Snail's Big Delivery**, a 58-second narrated children's story at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
+The current video is **بيني الحلزون والمشوار الكبير** (Benny the Snail's Big Delivery), a 98-second children's story narrated in Egyptian Arabic, at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
 ## Edit the video
 
 - **`index.html`** is the timeline. It places the scenes, the narration clips, the sound effects and the music. Each clip's `data-start` and `data-duration` set when it plays, in seconds.
 - **`compositions/world.html`** is the garden backdrop that runs under the whole story. The sun sets and the sky turns from day to sunset to dusk.
-- **`compositions/s1-title.html` to `s8-end.html`** are the eight scenes. Each one holds its characters (drawn as inline SVG), speech-bubble text, and a GSAP timeline whose times are relative to the start of that scene.
+- **`compositions/s1-title.html` to `s8-end.html`** are the eight scenes. Each one holds its characters (drawn as inline SVG), the Arabic speech-bubble text (right-to-left, in the bundled Baloo Bhaijaan 2 font), and a GSAP timeline whose times are relative to the start of that scene.
 
 Preview your changes live in the browser with:
 
@@ -27,19 +27,15 @@ npm run check           # lint plus runtime, layout, motion and contrast checks
 
 | Track | Files | Notes |
 | --- | --- | --- |
-| Narration | `assets/audio/narration/s1.mp3` to `s8.mp3` | One clip per scene, text in `story/narration.tsv` |
+| Narration | `assets/audio/narration/s1.mp3` to `s8.mp3` | One clip per scene, Egyptian Arabic text in `story/narration.tsv` |
 | Sound effects | `assets/audio/sfx/` | Chime, pop, sparkle and whoosh, timed to story moments |
 | Music | `assets/audio/music/musicbox.mp3` | Original tune made by `story/musicbox.py` |
 
-The music automatically dips under the narration. To change a narration line, edit `story/narration.tsv` and regenerate that clip:
+The music automatically dips under the narration.
 
-```bash
-pip install kokoro-onnx soundfile    # one-time, for the local voice model
-npx hyperframes tts "New line here." -v bf_emma -s 0.92 -o s2.wav
-ffmpeg -i s2.wav -ac 1 -b:a 96k assets/audio/narration/s2.mp3
-```
+The narration is generated on GitHub by `.github/workflows/narration.yml`, using Microsoft Edge's Egyptian Arabic voice `ar-EG-SalmaNeural` through the [edge-tts](https://github.com/rany2/edge-tts) tool. Note that edge-tts uses an unofficial interface to Microsoft's read-aloud service. To change a line, edit it in `story/narration.tsv` (one `scene<TAB>text` per line) and push. The workflow regenerates the clips, records their lengths in `story/narration-durations.tsv`, and commits both back to the branch. You can also run it from the **Actions** tab under **Generate narration**.
 
-If the new clip is a different length, update its `data-duration` in `index.html` (and the scene's length if needed). Then refresh the music dip by running `carve.mjs` from the `hyperframes-audio` skill (`node <skill>/scripts/carve.mjs --comp index.html --bed music-bed`), or by re-running the carve in Studio. Audio sources and licenses are listed in `assets/audio/CREDITS.md`.
+The workflow's own commit doesn't start a new video render (GitHub doesn't trigger workflows from commits made by workflows), so pull the new clips, check their timing, and push again to render. If a new clip is a different length, update its `data-duration` in `index.html` (and the scene's length if needed). Then refresh the music dip by running `carve.mjs` from the `hyperframes-audio` skill (`node <skill>/scripts/carve.mjs --comp index.html --bed music-bed`), or by re-running the carve in Studio. Audio sources and licenses are listed in `assets/audio/CREDITS.md`.
 
 ## Render locally
 

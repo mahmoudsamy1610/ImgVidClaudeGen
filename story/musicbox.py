@@ -3,7 +3,7 @@ import numpy as np, wave
 SR = 44100
 BPM = 96
 BEAT = 60 / BPM
-TOTAL = 58.0
+TOTAL = 98.0
 N = lambda name: {"C":0,"D":2,"E":4,"F":5,"G":7,"A":9,"B":11}[name[0]] + (1 if "#" in name else 0) + 12 * (int(name[-1]) + 1)
 freq = lambda m: 440.0 * 2 ** ((m - 69) / 12)
 

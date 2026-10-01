@@ -6,11 +6,25 @@
   <body>
     <template>
       <style>
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-arabic-800-normal.woff2") format("woff2");
+          unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+        }
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-latin-800-normal.woff2") format("woff2");
+          unicode-range: U+0000-00FF, U+2000-206F;
+        }
         #root {
           position: absolute;
           inset: 0;
           overflow: hidden;
-          font-family: Nunito, sans-serif;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
         }
         .stage {
           position: absolute;
@@ -62,11 +76,10 @@
           position: absolute;
           background: #ffffff;
           color: #3b2a55;
-          font-weight: 900;
+          font-weight: 800;
           font-size: 56px;
-          line-height: 1;
-          letter-spacing: -0.01em;
-          padding: 26px 44px;
+          line-height: 1.35;
+          padding: 14px 44px 18px;
           border-radius: 48px;
           box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
           white-space: nowrap;
@@ -92,9 +105,8 @@
           right: 0;
           text-align: center;
           color: #ffffff;
-          font-weight: 900;
-          letter-spacing: -0.02em;
-          line-height: 1;
+          font-weight: 800;
+          line-height: 1.3;
           text-shadow: 0 6px 0 #3b2a55;
         }
         .curtain {
@@ -107,8 +119,8 @@
 
       <div id="root" data-composition-id="s8-end" data-width="1920" data-height="1080">
         <div id="s8-end-stage" class="stage">
-        <div id="s8-end-moral" class="end-line" style="top: 250px; font-size: 64px">Slow is okay, when you never give up.</div>
-        <div id="s8-end-theend" class="end-line" style="top: 360px; font-size: 170px">The End</div>
+        <div id="s8-end-moral" class="end-line" dir="rtl" lang="ar" style="top: 210px; font-size: 64px">البطء مش عيب، طول ما إنت مش بتستسلم.</div>
+        <div id="s8-end-theend" class="end-line" dir="rtl" lang="ar" style="top: 320px; font-size: 150px">خلصت الحدوتة!</div>
         
         <div id="s8-end-benny" class="benny" style="left: 520px; top: 680px; transform: scale(0.9); transform-origin: 50% 100%">
           <svg id="s8-end-benny-art" class="benny-art" viewBox="0 0 330 230">
@@ -152,10 +164,10 @@
             <path d="M60 132 L28 126 M60 138 L30 142 M112 132 L146 126 M112 138 L144 142" stroke="#8a8aa0" stroke-width="3" stroke-linecap="round" />
           </svg>
         </div>
-        <svg id="s8-end-spark-0" class="sparkle" style="left: 520px; top: 300px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
-        <svg id="s8-end-spark-1" class="sparkle" style="left: 1360px; top: 300px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffffff" /></svg>
-        <svg id="s8-end-spark-2" class="sparkle" style="left: 600px; top: 520px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ff8fbf" /></svg>
-        <svg id="s8-end-spark-3" class="sparkle" style="left: 1300px; top: 540px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
+        <svg id="s8-end-spark-0" class="sparkle" style="left: 330px; top: 370px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
+        <svg id="s8-end-spark-1" class="sparkle" style="left: 1530px; top: 370px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffffff" /></svg>
+        <svg id="s8-end-spark-2" class="sparkle" style="left: 560px; top: 570px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ff8fbf" /></svg>
+        <svg id="s8-end-spark-3" class="sparkle" style="left: 1300px; top: 570px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
         <div id="s8-end-curtain" class="curtain"></div>
         </div>
       </div>
@@ -163,13 +175,15 @@
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo("#s8-end-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
+        // "علشان البطء مش عيب، طول ما إنت مش بتستسلم."
         tl.fromTo("#s8-end-moral", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.6);
-        tl.fromTo("#s8-end-theend", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.8)" }, 3.0);
-        tl.fromTo("#s8-end-spark-0, #s8-end-spark-1, #s8-end-spark-2, #s8-end-spark-3", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", stagger: 0.12 }, 3.2);
-        tl.to("#s8-end-benny", { y: -24, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 3.2);
-        tl.to("#s8-end-mouse", { y: -30, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 3.4);
+        // "توتة توتة، خلصت الحدوتة!"
+        tl.fromTo("#s8-end-theend", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.8)" }, 7.4);
+        tl.fromTo("#s8-end-spark-0, #s8-end-spark-1, #s8-end-spark-2, #s8-end-spark-3", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", stagger: 0.12 }, 7.6);
+        tl.to("#s8-end-benny", { y: -24, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 6.1);
+        tl.to("#s8-end-mouse", { y: -30, duration: 0.25, ease: "sine.out", yoyo: true, repeat: 3 }, 6.3);
         // Smooth fade to night at the very end
-        tl.to("#s8-end-curtain", { opacity: 1, duration: 1.5, ease: "sine.inOut" }, 5.5);
+        tl.to("#s8-end-curtain", { opacity: 1, duration: 1.6, ease: "sine.inOut" }, 10.5);
 
         window.__timelines["s8-end"] = tl;
       </script>
