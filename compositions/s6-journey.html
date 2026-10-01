@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Nunito, sans-serif;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .benny {
+          position: absolute;
+          width: 330px;
+          height: 230px;
+        }
+        .benny-art {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 330px;
+          height: 230px;
+        }
+        .leaf {
+          position: absolute;
+          left: 62px;
+          top: -64px;
+          width: 150px;
+          height: 104px;
+        }
+        .ladybug {
+          position: absolute;
+          width: 220px;
+          height: 170px;
+        }
+        .rabbit {
+          position: absolute;
+          width: 240px;
+          height: 290px;
+        }
+        .squirrel {
+          position: absolute;
+          width: 260px;
+          height: 260px;
+        }
+        .mouse {
+          position: absolute;
+          width: 190px;
+          height: 230px;
+        }
+        .prop {
+          position: absolute;
+        }
+        .bubble {
+          position: absolute;
+          background: #ffffff;
+          color: #3b2a55;
+          font-weight: 900;
+          font-size: 56px;
+          line-height: 1;
+          letter-spacing: -0.01em;
+          padding: 26px 44px;
+          border-radius: 48px;
+          box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
+          white-space: nowrap;
+        }
+        .bubble::after {
+          content: "";
+          position: absolute;
+          left: 70px;
+          bottom: -26px;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+          border-top: 30px solid #ffffff;
+        }
+        .sparkle {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s6-journey" data-width="1920" data-height="1080">
+        <div id="s6-journey-stage" class="stage">
+        
+        <svg id="s6-journey-pebbles" class="prop" style="left: 520px; top: 860px; width: 520px; height: 90px" viewBox="0 0 520 90">
+          <ellipse cx="60" cy="60" rx="54" ry="26" fill="#adb5bd" stroke="#868e96" stroke-width="4" />
+          <ellipse cx="170" cy="66" rx="40" ry="20" fill="#ced4da" stroke="#868e96" stroke-width="4" />
+          <ellipse cx="280" cy="58" rx="62" ry="30" fill="#adb5bd" stroke="#868e96" stroke-width="4" />
+          <ellipse cx="400" cy="66" rx="44" ry="22" fill="#ced4da" stroke="#868e96" stroke-width="4" />
+          <ellipse cx="480" cy="68" rx="30" ry="16" fill="#adb5bd" stroke="#868e96" stroke-width="4" />
+        </svg>
+        
+        <div id="s6-journey-benny" class="benny" style="left: 0px; top: 680px; transform: scale(0.9); transform-origin: 50% 100%">
+          <svg id="s6-journey-benny-art" class="benny-art" viewBox="0 0 330 230">
+            <rect x="20" y="160" width="290" height="48" rx="24" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <ellipse cx="262" cy="140" rx="40" ry="58" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <circle cx="236" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="290" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="240" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="294" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="243" cy="34" r="3" fill="#ffffff" />
+            <circle cx="297" cy="34" r="3" fill="#ffffff" />
+            <circle cx="292" cy="140" r="9" fill="#ff9eb5" opacity="0.8" />
+            <path d="M246 148 Q262 166 280 148" stroke="#3b2a55" stroke-width="5" fill="none" stroke-linecap="round" />
+            <circle cx="135" cy="118" r="82" fill="#f4a259" stroke="#c8652a" stroke-width="6" />
+            <path d="M127 118 a8 8 0 1 1 16 0 a18 18 0 1 1 -36 0 a32 32 0 1 1 64 0 a48 48 0 1 1 -96 0" stroke="#c8652a" stroke-width="7" fill="none" stroke-linecap="round" />
+          </svg>
+          <svg id="s6-journey-leaf" class="leaf" viewBox="0 0 150 104">
+            <path d="M8 84 Q36 4 144 18 Q118 102 8 84 Z" fill="#4caf50" stroke="#2e7d32" stroke-width="4" />
+            <path d="M14 82 Q78 54 138 22" stroke="#2e7d32" stroke-width="3" fill="none" />
+            <path d="M76 52 L50 34 L52 70 Z" fill="#ff6fa5" stroke="#d6457f" stroke-width="3" stroke-linejoin="round" />
+            <path d="M76 52 L102 34 L100 70 Z" fill="#ff6fa5" stroke="#d6457f" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="76" cy="52" r="9" fill="#ff8fbf" stroke="#d6457f" stroke-width="3" />
+          </svg>
+        </div>
+        
+        <svg id="s6-journey-fern-1" class="prop" style="left: 1060px; top: 650px; width: 300px; height: 360px; " viewBox="0 0 300 360">
+          <path d="M150 360 Q140 200 160 20" stroke="#2b8a3e" stroke-width="10" fill="none" stroke-linecap="round" />
+          <ellipse cx="196" cy="300" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 300)" /><ellipse cx="104" cy="266" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 266)" /><ellipse cx="196" cy="232" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 232)" /><ellipse cx="104" cy="198" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 198)" /><ellipse cx="196" cy="164" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 164)" /><ellipse cx="104" cy="130" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 130)" /><ellipse cx="196" cy="96" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 96)" /><ellipse cx="104" cy="62" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 62)" />
+        </svg>
+        
+        <svg id="s6-journey-fern-2" class="prop" style="left: 1380px; top: 700px; width: 300px; height: 360px; " viewBox="0 0 300 360">
+          <path d="M150 360 Q140 200 160 20" stroke="#2b8a3e" stroke-width="10" fill="none" stroke-linecap="round" />
+          <ellipse cx="196" cy="300" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 300)" /><ellipse cx="104" cy="266" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 266)" /><ellipse cx="196" cy="232" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 232)" /><ellipse cx="104" cy="198" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 198)" /><ellipse cx="196" cy="164" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 164)" /><ellipse cx="104" cy="130" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 130)" /><ellipse cx="196" cy="96" rx="52" ry="16" fill="#2f9e44" transform="rotate(28 196 96)" /><ellipse cx="104" cy="62" rx="52" ry="16" fill="#2f9e44" transform="rotate(-28 104 62)" />
+        </svg>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s6-journey-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
+        tl.to("#s6-journey-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 6.1);
+        // Over the pebbles and under the ferns, Benny keeps going
+        tl.fromTo("#s6-journey-benny", { x: -200 }, { x: 1500, duration: 6.3, ease: "none" }, 0.1);
+        tl.to("#s6-journey-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 11, yoyo: true }, 0.1);
+        tl.to("#s6-journey-benny", { y: -50, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 1 }, 1.6);
+        tl.to("#s6-journey-fern-1", { rotation: -5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 2.8);
+        tl.to("#s6-journey-fern-2", { rotation: 5, transformOrigin: "50% 100%", duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 3.2);
+
+        window.__timelines["s6-journey"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Nunito, sans-serif;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .benny {
+          position: absolute;
+          width: 330px;
+          height: 230px;
+        }
+        .benny-art {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 330px;
+          height: 230px;
+        }
+        .leaf {
+          position: absolute;
+          left: 62px;
+          top: -64px;
+          width: 150px;
+          height: 104px;
+        }
+        .ladybug {
+          position: absolute;
+          width: 220px;
+          height: 170px;
+        }
+        .rabbit {
+          position: absolute;
+          width: 240px;
+          height: 290px;
+        }
+        .squirrel {
+          position: absolute;
+          width: 260px;
+          height: 260px;
+        }
+        .mouse {
+          position: absolute;
+          width: 190px;
+          height: 230px;
+        }
+        .prop {
+          position: absolute;
+        }
+        .bubble {
+          position: absolute;
+          background: #ffffff;
+          color: #3b2a55;
+          font-weight: 900;
+          font-size: 56px;
+          line-height: 1;
+          letter-spacing: -0.01em;
+          padding: 26px 44px;
+          border-radius: 48px;
+          box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
+          white-space: nowrap;
+        }
+        .bubble::after {
+          content: "";
+          position: absolute;
+          left: 70px;
+          bottom: -26px;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+          border-top: 30px solid #ffffff;
+        }
+        .sparkle {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+        }
+
+        .title-line {
+          position: absolute;
+          left: 0;
+          right: 0;
+          text-align: center;
+          color: #3b2a55;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          line-height: 1;
+          text-shadow: 0 6px 0 #ffffff;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s1-title" data-width="1920" data-height="1080">
+        <div id="s1-title-stage" class="stage">
+        <div id="s1-title-line1" class="title-line" style="top: 230px; font-size: 104px">Benny the Snail's</div>
+        <div id="s1-title-line2" class="title-line" style="top: 360px; font-size: 150px">Big Delivery</div>
+        
+        <div id="s1-title-benny" class="benny" style="left: -360px; top: 660px; transform: scale(1.0); transform-origin: 50% 100%">
+          <svg id="s1-title-benny-art" class="benny-art" viewBox="0 0 330 230">
+            <rect x="20" y="160" width="290" height="48" rx="24" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <ellipse cx="262" cy="140" rx="40" ry="58" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <circle cx="236" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="290" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="240" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="294" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="243" cy="34" r="3" fill="#ffffff" />
+            <circle cx="297" cy="34" r="3" fill="#ffffff" />
+            <circle cx="292" cy="140" r="9" fill="#ff9eb5" opacity="0.8" />
+            <path d="M246 148 Q262 166 280 148" stroke="#3b2a55" stroke-width="5" fill="none" stroke-linecap="round" />
+            <circle cx="135" cy="118" r="82" fill="#f4a259" stroke="#c8652a" stroke-width="6" />
+            <path d="M127 118 a8 8 0 1 1 16 0 a18 18 0 1 1 -36 0 a32 32 0 1 1 64 0 a48 48 0 1 1 -96 0" stroke="#c8652a" stroke-width="7" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <svg id="s1-title-spark-0" class="sparkle" style="left: 470px; top: 250px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
+        <svg id="s1-title-spark-1" class="sparkle" style="left: 1400px; top: 220px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffffff" /></svg>
+        <svg id="s1-title-spark-2" class="sparkle" style="left: 1480px; top: 430px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ff8fbf" /></svg>
+        <svg id="s1-title-spark-3" class="sparkle" style="left: 400px; top: 470px" viewBox="0 0 60 60"><path d="M30 0 Q34 26 60 30 Q34 34 30 60 Q26 34 0 30 Q26 26 30 0 Z" fill="#ffe066" /></svg>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.to("#s1-title-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 4.6);
+        tl.fromTo("#s1-title-line1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.6)" }, 0.3);
+        tl.fromTo("#s1-title-line2", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.9, ease: "back.out(1.8)" }, 0.7);
+        tl.fromTo("#s1-title-spark-0, #s1-title-spark-1, #s1-title-spark-2, #s1-title-spark-3", { opacity: 0, scale: 0, rotation: -45 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)", stagger: 0.15 }, 1.1);
+        tl.fromTo("#s1-title-benny", { x: 0 }, { x: 1160, duration: 4.4, ease: "none" }, 0.4);
+        tl.to("#s1-title-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 7, yoyo: true }, 0.4);
+
+        window.__timelines["s1-title"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

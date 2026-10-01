@@ -1,14 +1,14 @@
 # HyperFrameClaude
 
-A [HyperFrames](https://hyperframes.heygen.com) project that renders an HTML composition to MP4. The sample is a 10-second, 1920x1080, 30fps title card: a dark background, a title that fades in, a subtitle that slides up, and a fade-out at the end.
+A [HyperFrames](https://hyperframes.heygen.com) project that renders an HTML composition to MP4.
+
+The current video is **Benny the Snail's Big Delivery**, a 58-second narrated children's story at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
 ## Edit the video
 
-Everything lives in `index.html`:
-
-- **Text and styling**: the `#title` and `#subtitle` elements and the `<style>` block.
-- **Timing and animation**: the GSAP timeline in the `<script>` at the bottom. The third argument of each tween is its start time in seconds.
-- **Length, size and frame rate**: the `data-duration`, `data-width`, `data-height` and `data-fps` attributes on `#root`.
+- **`index.html`** is the timeline. It places the scenes, the narration clips, the sound effects and the music. Each clip's `data-start` and `data-duration` set when it plays, in seconds.
+- **`compositions/world.html`** is the garden backdrop that runs under the whole story. The sun sets and the sky turns from day to sunset to dusk.
+- **`compositions/s1-title.html` to `s8-end.html`** are the eight scenes. Each one holds its characters (drawn as inline SVG), speech-bubble text, and a GSAP timeline whose times are relative to the start of that scene.
 
 Preview your changes live in the browser with:
 
@@ -22,6 +22,24 @@ Before rendering, run the composition checks:
 npx hyperframes lint    # static checks only
 npm run check           # lint plus runtime, layout, motion and contrast checks
 ```
+
+### Sound
+
+| Track | Files | Notes |
+| --- | --- | --- |
+| Narration | `assets/audio/narration/s1.mp3` to `s8.mp3` | One clip per scene, text in `story/narration.tsv` |
+| Sound effects | `assets/audio/sfx/` | Chime, pop, sparkle and whoosh, timed to story moments |
+| Music | `assets/audio/music/musicbox.mp3` | Original tune made by `story/musicbox.py` |
+
+The music automatically dips under the narration. To change a narration line, edit `story/narration.tsv` and regenerate that clip:
+
+```bash
+pip install kokoro-onnx soundfile    # one-time, for the local voice model
+npx hyperframes tts "New line here." -v bf_emma -s 0.92 -o s2.wav
+ffmpeg -i s2.wav -ac 1 -b:a 96k assets/audio/narration/s2.mp3
+```
+
+If the new clip is a different length, update its `data-duration` in `index.html` (and the scene's length if needed). Then refresh the music dip by running `carve.mjs` from the `hyperframes-audio` skill (`node <skill>/scripts/carve.mjs --comp index.html --bed music-bed`), or by re-running the carve in Studio. Audio sources and licenses are listed in `assets/audio/CREDITS.md`.
 
 ## Render locally
 
