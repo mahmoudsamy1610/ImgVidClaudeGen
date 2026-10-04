@@ -20,3 +20,4 @@ Brand logos are trademarks of their owners and are shown only to identify the co
   - `tools/katalon.svg`: https://katalon.info/hubfs/katalon_small_transparent.svg
   - `tools/testmo.svg`: https://www.testmo.com/wp-content/uploads/2024/02/Testmo-By-Sembi-Logo-_Dark-369x109-1.svg
   - `tools/restassured.png`: https://rest-assured.io/img/logo-transparent.png
+  - `tools/zephyr.png`: https://marketplace.atlassian.com/product-listing/files/479d33c2-93c8-4afb-bda5-ef68b9f04166?fileType=image&mode=full-fit (Zephyr app icon on its Atlassian Marketplace listing)
