@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Montserrat, sans-serif;
+          color: #f4f6fb;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .mono {
+          font-family: "JetBrains Mono", monospace;
+        }
+        .label {
+          position: absolute;
+          font-family: "JetBrains Mono", monospace;
+          font-size: 30px;
+          color: #4cc9f0;
+          letter-spacing: 0.02em;
+        }
+        .h1 {
+          position: absolute;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        .h2 {
+          position: absolute;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .muted {
+          color: #a9b3d1;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 999px;
+          background: #18213f;
+          border: 2px solid #2a3561;
+          font-size: 28px;
+          font-weight: 700;
+          color: #dfe5f7;
+          white-space: nowrap;
+        }
+        .row {
+          position: absolute;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+        .tile img {
+          display: block;
+          max-width: 86%;
+          max-height: 80%;
+          object-fit: contain;
+        }
+        .pass {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 12px 26px 12px 18px;
+          border-radius: 14px;
+          background: rgba(61, 220, 132, 0.14);
+          border: 2px solid #3ddc84;
+          color: #3ddc84;
+          font-family: "JetBrains Mono", monospace;
+          font-size: 30px;
+          font-weight: 700;
+        }
+        .pass svg {
+          width: 34px;
+          height: 34px;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s2-ihorizons" data-width="1920" data-height="1080">
+        <div id="s2-ihorizons-stage" class="stage">
+        <div id="s2-ihorizons-label" class="label" style="left: 200px; top: 150px">describe("Experience")</div>
+        <img id="s2-ihorizons-logo" src="assets/logos/companies/ihorizons.png" alt="iHorizons" style="position: absolute; left: 200px; top: 220px; height: 120px" />
+        <div id="s2-ihorizons-role" class="h2" style="left: 200px; top: 370px; font-size: 44px">Senior QA / QC Engineer <span class="muted">· Apr 2024 – Present</span></div>
+        <div id="s2-ihorizons-p-label" class="label" style="left: 200px; top: 480px; font-size: 26px; color: #a9b3d1">projects</div>
+        <div id="s2-ihorizons-woqod" style="position: absolute; left: 200px; top: 530px; display: flex; align-items: center; gap: 26px">
+          <img src="assets/logos/companies/woqod.png" alt="WOQOD" style="width: 170px; height: 170px; border-radius: 34px" />
+          <div><div class="h2" style="position: static; font-size: 46px">WOQOD Qatar Fuel</div><div class="muted" style="font-size: 30px; font-weight: 700">Web · App · CMS</div></div>
+        </div>
+        <div id="s2-ihorizons-qnbn" style="position: absolute; left: 1000px; top: 530px; display: flex; align-items: center; gap: 26px">
+          <div id="s2-ihorizons-qnbn-tile" class="tile" style="width: 330px; height: 170px; "><img src="assets/logos/companies/qnbn.png" alt="" /></div>
+          <div><div class="h2" style="position: static; font-size: 46px">QNBN</div><div class="muted" style="font-size: 30px; font-weight: 700">Qatar National Broadband</div></div>
+        </div>
+        <div id="s2-ihorizons-chips" class="row" style="left: 200px; top: 790px; width: 1560px; gap: 14px; font-size: 0">
+          <div class="chip" style="font-size: 25px">Requirements &amp; static testing</div>
+          <div class="chip" style="font-size: 25px">Web · Mobile · API · DB</div>
+          <div class="chip" style="font-size: 25px">Client demos</div>
+          <div class="chip" style="font-size: 25px">Mentoring</div>
+          <div class="chip" style="font-size: 25px">AI adoption</div>
+        </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s2-ihorizons-stage", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "sine.out" }, 0);
+        tl.to("#s2-ihorizons-stage", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, 3.60);
+        tl.fromTo("#s2-ihorizons-label", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.05);
+        tl.fromTo("#s2-ihorizons-logo", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.1);
+        tl.fromTo("#s2-ihorizons-role", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.5);
+        tl.fromTo("#s2-ihorizons-p-label", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.0);
+        tl.fromTo("#s2-ihorizons-woqod", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 1.35);
+        tl.fromTo("#s2-ihorizons-qnbn", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 2.35);
+        tl.fromTo("#s2-ihorizons-chips .chip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", stagger: 0.12 }, 1.6);
+
+        window.__timelines["s2-ihorizons"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
