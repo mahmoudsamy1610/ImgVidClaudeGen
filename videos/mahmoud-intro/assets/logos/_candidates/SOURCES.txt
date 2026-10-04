@@ -1,0 +1,123 @@
+ihorizons: site-01 <- https://www.ihorizons.com/themes/gavias_meipaly/logo.png
+ihorizons: site-02 <- https://www.ihorizons.com/themes/gavias_meipaly/favicon.ico
+ihorizons: site-03 <- https://www.ihorizons.com/sites/default/files/gva-sliderlayer-upload/qlogo-kzzaah.png
+ihorizons: site-04 <- https://www.ihorizons.com/sites/default/files/gva-sliderlayer-upload/Ooredoo-mainlogo-xfufqf.png
+ihorizons: https://www.ihorizons.com/sites/default/files/gva-sliderlayer-upload/__logo-رالمجلس الاعلي للقضاء قطر-kd8936.png failed: URL can't contain control characters. '/sites/default/files/gva-sliderlayer-upload/__logo-رالمجلس الاعلي للقضاء قطر-kd8936.png' (found at least ' ')
+ihorizons: site-05 <- https://www.ihorizons.com/sites/default/files/banner/web%20logo_Google%201_0.png
+ihorizons: commons-01 <- File:Deepwater Horizon oil spill - May 24, 2010.jpg https://upload.wikimedia.org/wikipedia/commons/0/0d/Deepwater_Horizon_oil_spill_-_May_24%2C_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+ihorizons: commons-02 <- File:Horizon game series logo.png https://upload.wikimedia.org/wikipedia/commons/6/66/Horizon_game_series_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+ihorizons: https://upload.wikimedia.org/wikipedia/commons/e/e3/New_Horizon_College_of_Engineering_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+softxpert: site-01 <- https://www.softxpert.com/wp-content/themes/Softxpert/images/favicon.ico
+softxpert: https://www.softxpert.com/images/favicon.ico failed: HTTP Error 404: Not Found
+softxpert: site-02 <- https://www.softxpert.com/wp-content/uploads/2015/08/contact.png
+softxpert: site-03 <- https://www.softxpert.com/wp-content/uploads/2015/08/Softxpert-logoFinal1.png
+softxpert: site-04 <- https://www.softxpert.com/wp-content/uploads/2015/08/logo1.png
+softxpert: site-05 <- https://www.softxpert.com/wp-content/uploads/2015/08/logo2.png
+softxpert: site-06 <- https://www.softxpert.com/wp-content/uploads/2015/08/logo4.png
+softxpert: site-07 <- https://www.softxpert.com/wp-content/uploads/2015/08/logo3.png
+softxpert: site-08 <- https://www.softxpert.com/wp-content/uploads/2015/08/logo-autolina4.png
+tendegrees: site-01 <- https://www.tendegrees.co/images/wp-content-uploads-2024-05-cropped-Custom-Luxury-Home-Dallas-1024x613.avif
+tendegrees: site-02 <- https://www.tendegrees.co/favicon.svg
+tendegrees: site-03 <- https://www.tendegrees.co/favicon.ico
+tendegrees: site-04 <- https://www.tendegrees.co/images/10d-logo-mark.svg
+tendegrees: https://upload.wikimedia.org/wikipedia/commons/6/68/Development_of_a_Microcomputer-based_engineering_Design_Optimization_software_package._%28IA_developmentofmic00boot%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+tendegrees: https://upload.wikimedia.org/wikipedia/commons/6/6e/Evaluation_of_SECNAVINST_3560.1_tactical_digital_systems_documentation_standard_for_software_maintenance_%28IA_evaluationofsecn00schn%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+tendegrees: https://upload.wikimedia.org/wikipedia/commons/6/6d/11March2009.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+woqod: https://www.woqod.com/website/apple-icon.png failed: HTTP Error 404: Not Found
+woqod: site-01 <- https://www.woqod.com/website/favicon.ico
+woqod: site-02 <- https://www.woqod.com/fo_api_website/api/Images/ImageFile?id=55ae20ba-d6d6-4dd2-9aeb-34a3191d4779
+qnbn: site-01 <- https://qnbn.qa/wp-content/uploads/2023/12/cropped-fav-icon-32x32.png
+qnbn: site-02 <- https://qnbn.qa/wp-content/uploads/2023/12/cropped-fav-icon-192x192.png
+qnbn: site-03 <- https://qnbn.qa/wp-content/uploads/2023/12/cropped-fav-icon-180x180.png
+qnbn: site-04 <- https://qnbn.qa/wp-content/uploads/2023/12/qnbn.png
+qnbn: site-05 <- https://qnbn.qa/wp-content/uploads/2023/12/qn23.png
+qnbn: site-06 <- https://qnbn.qa/wp-content/uploads/2023/12/logo.png
+autofox: site-01 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87ac40_Favicon.png
+autofox: site-02 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6920e94284272779d028c288_autofox-app-icon-256-256.png
+autofox: site-03 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87a7e0_643d40ed0aff90420bcdfc68_Logo%20Autofox%201.svg
+autofox: site-04 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87aa3f_66e03b7423ac8568e23f3ebd_audaris.svg
+autofox: site-05 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87aa59_66e03b7323ac8568e23f3e30_AutoDo.svg
+autofox: site-06 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87aa5f_66e03b7323ac8568e23f3e3c_autohausen.svg
+autofox: site-07 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87aa39_66e03b7323ac8568e23f3e59_Autorola.svg
+autofox: site-08 <- https://cdn.prod.website-files.com/6914b5bfd4497062cd87a7a4/6914b5bfd4497062cd87aa3d_66e03b7423ac8568e23f3ec2_Carix.svg
+autolina: site-01 <- https://www.autolina.ch/media/logo.fe653decfaff4e10.png
+autolina: site-02 <- https://www.autolina.ch/favicon.ico
+autolina: site-03 <- https://www.autolina.ch/apple-touch-icon-180x180.png
+autolina: site-04 <- https://www.autolina.ch/apple-touch-icon-167x167.png
+autolina: site-05 <- https://www.autolina.ch/apple-touch-icon-152x152.png
+autolina: site-06 <- https://www.autolina.ch/apple-touch-icon-120x120.png
+autolina: site-07 <- https://api.autolina.ch/top-offers/661/actions/get-logo
+autolina: site-08 <- https://api.autolina.ch/top-offers/438/actions/get-logo
+mumzworld: site-01 <- https://d23qh7odouprnk.cloudfront.net/OG_EN.jpg
+mumzworld: site-02 <- https://www.mumzworld.com/favicon.ico?favicon.43g6e3u9aq5ou.ico?dpl=26-62-0
+mumzworld: site-03 <- https://www.mumzworld.com/assets/images/newMumzLogoENIcon.svg
+vom: site-01 <- https://getvom.com/wp-content/uploads/2021/09/cropped-faveicon-32x32.png
+vom: site-02 <- https://getvom.com/wp-content/uploads/2021/09/cropped-faveicon-192x192.png
+vom: site-03 <- https://getvom.com/wp-content/uploads/2021/09/cropped-faveicon-180x180.png
+vom: site-04 <- https://getvom.com/wp-content/uploads/2021/09/vom-logo-e1630597121770.png
+vom: site-05 <- https://getvom.com/wp-content/uploads/2023/08/toppng.com-app-store-logo-app-store-icon-white-1441x508-1-300x106.png
+vom: site-06 <- https://getvom.com/wp-content/uploads/2024/04/ZATCA_Logo-1024x630.png
+vom: site-07 <- https://getvom.com/wp-content/uploads/2023/08/toppng.com-app-store-logo-app-store-icon-white-1441x508-1.png
+vom: commons-01 <- File:Logo Neue Geschichten vom Pumuckl.svg https://upload.wikimedia.org/wikipedia/commons/1/11/Logo_Neue_Geschichten_vom_Pumuckl.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+vom: commons-02 <- File:Neues vom Hexer Logo 001.svg https://upload.wikimedia.org/wikipedia/commons/a/ae/Neues_vom_Hexer_Logo_001.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+vom: https://upload.wikimedia.org/wikipedia/commons/7/7d/Logo_der_Verkehrssicherheitskampagne_%22Runter_vom_Gas%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+istqb: site-01 <- https://istqb.org/wp-content/uploads/2024/10/cropped-favicon-32x32.png
+istqb: site-02 <- https://istqb.org/wp-content/uploads/2024/10/cropped-favicon-192x192.png
+istqb: site-03 <- https://istqb.org/wp-content/uploads/2024/10/cropped-favicon-180x180.png
+istqb: site-04 <- https://istqb.org/wp-content/uploads/2025/06/logo-for-header.svg
+istqb: site-05 <- https://istqb.org/wp-content/uploads/2024/10/istqb-ctfl-4-logo.jpg
+istqb: site-06 <- https://istqb.org/wp-content/uploads/2024/10/istqb-test-analyst-logo.jpg
+istqb: site-07 <- https://istqb.org/wp-content/uploads/2024/10/istqb-agile-test-leadership-at-scale-logo.jpg
+istqb: site-08 <- https://istqb.org/wp-content/uploads/2024/10/istqb-ai-testing-logo.jpg
+alexu: site-01 <- https://alexu.edu.eg/templates/alexandriauniversity/favicon.ico
+alexu: site-02 <- https://alexu.edu.eg/templates/alexandriauniversity/images/logo-alex-en.webp
+alexu: site-03 <- https://alexu.edu.eg/templates/alexandriauniversity/images/alex_logo_footer.png
+alexu: commons-01 <- File:Lsu alexandria logo.png https://upload.wikimedia.org/wikipedia/commons/2/25/Lsu_alexandria_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+alexu: https://upload.wikimedia.org/wikipedia/commons/9/99/Lsu_alexandria_primary_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+alexu: https://upload.wikimedia.org/wikipedia/commons/b/b5/LSU%E2%80%93Alexandria_Generals_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too Many Requests (015d12c)
+katalon: site-01 <- https://katalon.info/hubfs/katalon_small_transparent.svg
+katalon: site-02 <- https://katalon.com/images/homepage-2026/home-page-og-image.png
+katalon: site-03 <- https://katalon.com/_next/static/media/samsung.6242edb0.svg
+katalon: site-04 <- https://katalon.com/_next/static/media/nasdaq.fbe38dcb.svg
+katalon: site-05 <- https://katalon.com/_next/static/media/ing.6a541eef.svg
+katalon: site-06 <- https://katalon.com/_next/static/media/security-bank.c33b2c05.svg
+katalon: site-07 <- https://katalon.com/_next/static/media/santander.129834c6.svg
+katalon: site-08 <- https://katalon.com/_next/static/media/axis-bank.077e49aa.svg
+katalon: commons search failed: HTTP Error 429: Too Many Requests
+testng: commons search failed: HTTP Error 429: Too Many Requests
+allure: site-01 <- https://allurereport.org/favicon.ico
+allure: site-02 <- https://allurereport.org/svg/logo-report-sign.svg
+allure: commons search failed: HTTP Error 429: Too Many Requests
+zephyr: site-01 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/0257e251-443e-408a-11e9-cc589df6eb00/public
+zephyr: site-02 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/72740f36-a1e4-464f-dea0-354dc52f2a00/public
+zephyr: site-03 <- https://smartbear.com/hubs-static-assets/images/zephyr/logos/microsoft_logo.svg
+zephyr: site-04 <- https://smartbear.com/hubs-static-assets/images/zephyr/logos/jetblue_logo.svg
+zephyr: site-05 <- https://smartbear.com/hubs-static-assets/images/zephyr/logos/adobe_logo.svg
+zephyr: site-06 <- https://static1.smartbear.co/smartbearbrand/media/images/logos/customers/pfizer_logo.png
+zephyr: site-07 <- https://smartbear.com/hubs-static-assets/images/zephyr/logos/natgeo_logo_sm.svg
+zephyr: site-08 <- https://static1.smartbear.co/smartbearbrand/media/images/logos/customers/expedia_logo.png
+zephyr: commons search failed: HTTP Error 429: Too Many Requests
+testmo: site-01 <- https://www.testmo.com/wp-content/uploads/2024/06/cropped-favicon-32x32.png
+testmo: site-02 <- https://www.testmo.com/wp-content/uploads/2024/06/cropped-favicon-192x192.png
+testmo: site-03 <- https://www.testmo.com/wp-content/uploads/2024/06/cropped-favicon-180x180.png
+testmo: site-04 <- https://www.testmo.com/wp-content/uploads/2024/02/Testmo-By-Sembi-Logo-_Dark-369x109-1.svg
+testmo: site-05 <- https://www.testmo.com/wp-content/uploads/2026/01/Testmo-Logo.svg
+testmo: site-06 <- https://www.testmo.com/wp-content/uploads/2024/03/logo-light.svg
+testmo: commons search failed: HTTP Error 429: Too Many Requests
+restassured: site-01 <- https://rest-assured.io/img/logo-transparent.png
+restassured: https://media.parkster.io/parkster_(r)_logo.svg failed: <urlopen error [Errno -2] Name or service not known>
+restassured: commons search failed: HTTP Error 429: Too Many Requests
+antigravity: commons search failed: HTTP Error 429: Too Many Requests
+blazemeter: site-01 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/favicon-16x16.png
+blazemeter: site-02 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/favicon-32x32.png
+blazemeter: site-03 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/favicon.ico
+blazemeter: site-04 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/apple-touch-icon.png
+blazemeter: site-05 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/android-chrome-192x192.png
+blazemeter: site-06 <- https://www.blazemeter.com/themes/custom/p4base/assets/favicons/blz/android-chrome-512x512.png
+blazemeter: site-07 <- https://www.blazemeter.com/sites/default/files/favicon.ico
+blazemeter: site-08 <- https://www.blazemeter.com/sites/default/files/logo-blazemeter-reg.svg
+blazemeter: inline-01.svg <- inline <svg> on https://www.blazemeter.com
+blazemeter: commons search failed: HTTP Error 429: Too Many Requests
+estb: https://estb.org.eg failed: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>
+estb: https://www.estb.org.eg failed: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>
+estb: commons search failed: HTTP Error 429: Too Many Requests
