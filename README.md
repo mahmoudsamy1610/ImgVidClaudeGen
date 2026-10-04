@@ -83,20 +83,22 @@ The repository is private, so all of these links only work for people signed in 
 
 ## Video CV: Mahmoud Samy
 
-`videos/mahmoud-intro/` is a separate HyperFrames project: a 32-second, 1920x1080 video CV with an English voiceover, an original music bed, real photos, and the logos of the companies, projects, tools and certifications in the CV.
+`videos/mahmoud-intro/` is a separate HyperFrames project: a 51-second, 1920x1080 video CV with an original music bed, real photos, and the logos of the companies, projects, tools and certifications in the CV. It has no voiceover.
 
 | Time | Scene file | Content |
 | --- | --- | --- |
-| 0–5.7s | `s1-intro.html` | Headshot, name, title, Alexandria |
-| 5.7–9.65s | `s2-ihorizons.html` | iHorizons, WOQOD and QNBN |
-| 9.65–16.9s | `s3-softxpert.html` | Softxpert, Autofox, Autolina and Mumzworld, career timeline with Ten Degrees and VOM |
-| 16.9–23.1s | `s4-tools.html` | Testing types and a 28-logo tools wall |
-| 23.1–26.35s | `s5-ai.html` | AI-driven QA |
-| 26.35–32s | `s6-connect.html` | ISTQB, courses, Alexandria University, contact details |
+| 0–4.5s | `s1-intro.html` | Headshot, name, title, Alexandria, years in QA |
+| 4.5–13s | `s2-ihorizons.html` | iHorizons: WOQOD and QNBN, all role points, achievement |
+| 13–23s | `s3-softxpert.html` | Softxpert: "Significantly improved the test process", Autofox, Autolina and Mumzworld, all role points, achievements |
+| 23–27s | `s4-tendegrees.html` | Ten Degrees: VOM, role points |
+| 27–35s | `s5-tools.html` | Testing skills, then tools by category: test automation, CI/CD & cloud, test management, manual & API testing, languages & IDEs |
+| 35–39.5s | `s6-certs.html` | ISTQB, courses, Alexandria University |
+| 39.5–47s | `s7-ai.html` | Semi-autonomous agentic QA: the automated QA lifecycle, agents, context, skills, MCPs & CLIs |
+| 47–51s | `s8-connect.html` | Contact details |
 
-All scene files are in `videos/mahmoud-intro/compositions/`. To work on the video locally, run commands from that folder (`npm run dev`, `npm run check`, `npx hyperframes render --output intro.mp4`).
+All scene files are in `videos/mahmoud-intro/compositions/`. To work on the video locally, run commands from that folder (`npm run dev`, `npm run check`, `npx hyperframes render --output intro.mp4`). If you change a scene's length, update its slot in `index.html` (`data-start`, `data-duration`) and shift the scenes after it.
 
-- **Voiceover:** `assets/audio/vo/v1.mp3` to `v6.mp3`, generated locally with `npx hyperframes tts` (Kokoro voice `am_michael`, speed 1.2). The script is in `tools/voiceover.tsv`. The music dips under the voice through the carve on `music-bed`.
-- **Music:** `assets/audio/music/bed.mp3`, an original tune made by `tools/music.py`.
+- **Music:** `assets/audio/music/bed.mp3`, an original tune made by `tools/music.py` (set `TOTAL` to the video length and re-run it if the length changes).
+- **Sound effects:** a soft whoosh on each scene change and a chime on the contact card (`assets/audio/sfx/`).
 - **Logos:** `assets/logos/`. Tool logos come from Devicon and Simple Icons. Company logos were downloaded from each owner's website by `.github/workflows/fetch-logos.yml`, which collects candidates from the sites listed in `tools/logo-sources.tsv` for review. Every file's source is listed in `assets/logos/SOURCES.md`.
 - **Photos:** `assets/photos/`. Location and camera metadata were removed.

@@ -9,7 +9,7 @@ import numpy as np
 SR = 44100
 BPM = 112
 BEAT = 60 / BPM
-TOTAL = 32.0
+TOTAL = 51.0
 rng = np.random.default_rng(7)  # fixed seed: the same file every run
 
 

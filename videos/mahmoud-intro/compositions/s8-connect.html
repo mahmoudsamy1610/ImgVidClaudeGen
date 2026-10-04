@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Montserrat, sans-serif;
+          color: #f4f6fb;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .label {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .h1 {
+          position: absolute;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        .h2 {
+          position: absolute;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .muted {
+          color: #a9b3d1;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 999px;
+          background: #18213f;
+          border: 2px solid #2a3561;
+          font-size: 28px;
+          font-weight: 700;
+          color: #dfe5f7;
+          white-space: nowrap;
+        }
+        .row {
+          position: absolute;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+        .tile img {
+          display: block;
+          max-width: 86%;
+          max-height: 80%;
+          object-fit: contain;
+        }
+
+        .heading {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .chips {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .chips .chip {
+          font-size: 23px;
+          padding: 9px 20px;
+        }
+        .achieve {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px 28px;
+          border-radius: 20px;
+          background: rgba(255, 209, 102, 0.08);
+          border: 2px solid rgba(255, 209, 102, 0.55);
+        }
+        .achieve-title {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffd166;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+        .achieve-item {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #f4f6fb;
+        }
+        .proj {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .proj-sub {
+          font-size: 22px;
+          font-weight: 700;
+          color: #a9b3d1;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s8-connect" data-width="1920" data-height="1080">
+        <div id="s8-connect-stage" class="stage">
+        <img id="s8-connect-photo" src="assets/photos/techne-summit.jpg" alt="" style="position: absolute; left: 200px; top: 150px; width: 540px; height: 780px; object-fit: cover; object-position: 50% 22%; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.5)" />
+        <div id="s8-connect-name" class="heading" style="left: 830px; top: 220px">Mahmoud Samy · Senior Software QA / QC Engineer</div>
+        <div id="s8-connect-head" class="h1" style="left: 830px; top: 270px; font-size: 104px">Let's connect</div>
+        <div id="s8-connect-list" style="position: absolute; left: 830px; top: 440px; display: flex; flex-direction: column; gap: 34px">
+          <div style="display: flex; align-items: center; gap: 22px; font-size: 36px; font-weight: 700"><img src="assets/logos/tools/linkedin.svg" alt="" style="width: 44px; height: 44px" /><span>linkedin.com/in/mahmoud-samy-test</span></div>
+          <div style="display: flex; align-items: center; gap: 22px; font-size: 36px; font-weight: 700"><img src="assets/logos/tools/github.svg" alt="" style="width: 44px; height: 44px; background: #ffffff; border-radius: 50%" /><span>github.com/mahmoudsamy1610</span></div>
+          <div style="display: flex; align-items: center; gap: 22px; font-size: 36px; font-weight: 700"><img src="assets/logos/tools/gmail.svg" alt="" style="width: 44px; height: 44px; background: #ffffff; border-radius: 10px; padding: 5px; box-sizing: border-box" /><span>mahmoud.samy1610@gmail.com</span></div>
+          <div style="display: flex; align-items: center; gap: 22px; font-size: 36px; font-weight: 700"><svg viewBox="0 0 24 24" width="44" height="44"><rect width="24" height="24" rx="6" fill="#3ddc84" /><path d="M8.6 5.5l1.7 3.4-1.4 1.3c.8 1.8 2.2 3.2 4 4l1.3-1.4 3.4 1.7-.6 2.6c-.2.6-.8 1-1.5.9C10.300 17.500 6.500 13.700 6 8.500c-.1-.7.3-1.300.9-1.500z" fill="#0b1020" /></svg><span>+20 106 740 0797</span></div>
+        </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s8-connect-stage", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "sine.out" }, 0);
+        tl.fromTo("#s8-connect-photo", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.05);
+        tl.fromTo("#s8-connect-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+        tl.fromTo("#s8-connect-head", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+        tl.fromTo("#s8-connect-list > div", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out", stagger: 0.15 }, 0.6);
+
+        window.__timelines["s8-connect"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

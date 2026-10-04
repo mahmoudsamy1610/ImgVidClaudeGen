@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Montserrat, sans-serif;
+          color: #f4f6fb;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .label {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .h1 {
+          position: absolute;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        .h2 {
+          position: absolute;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .muted {
+          color: #a9b3d1;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 999px;
+          background: #18213f;
+          border: 2px solid #2a3561;
+          font-size: 28px;
+          font-weight: 700;
+          color: #dfe5f7;
+          white-space: nowrap;
+        }
+        .row {
+          position: absolute;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+        .tile img {
+          display: block;
+          max-width: 86%;
+          max-height: 80%;
+          object-fit: contain;
+        }
+
+        .heading {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .chips {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .chips .chip {
+          font-size: 23px;
+          padding: 9px 20px;
+        }
+        .achieve {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px 28px;
+          border-radius: 20px;
+          background: rgba(255, 209, 102, 0.08);
+          border: 2px solid rgba(255, 209, 102, 0.55);
+        }
+        .achieve-title {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffd166;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+        .achieve-item {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #f4f6fb;
+        }
+        .proj {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .proj-sub {
+          font-size: 22px;
+          font-weight: 700;
+          color: #a9b3d1;
+        }
+
+        .step {
+          padding: 16px 18px;
+          border-radius: 16px;
+          background: #18213f;
+          border: 2px solid #4cc9f0;
+          font-size: 23px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        .arrow {
+          display: flex;
+        }
+        .pillar {
+          padding: 24px 26px;
+          border-radius: 20px;
+          background: rgba(61, 220, 132, 0.08);
+          border: 2px solid rgba(61, 220, 132, 0.6);
+        }
+        .pillar-t {
+          font-size: 36px;
+          font-weight: 900;
+          color: #3ddc84;
+        }
+        .pillar-s {
+          margin-top: 8px;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #dfe5f7;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s7-ai" data-width="1920" data-height="1080">
+        <div id="s7-ai-stage" class="stage">
+        <div id="s7-ai-head" class="heading" style="left: 200px; top: 110px">Now: AI-driven QA</div>
+        <div id="s7-ai-title" class="h1" style="left: 200px; top: 160px; font-size: 78px">Semi-autonomous agentic QA</div>
+        <div id="s7-ai-sub" class="h2" style="left: 200px; top: 265px; font-size: 34px; color: #a9b3d1">Built with my team at iHorizons: AI agents automate the whole QA lifecycle</div>
+        <div id="s7-ai-flow" style="position: absolute; left: 200px; top: 360px; width: 1520px; display: flex; align-items: center; justify-content: space-between"><div class="step">Requirements</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Test analysis</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Test cases</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Automation scripts</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Locators</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Execution</div><div class="arrow"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 12h14m-5-6 6 6-6 6" stroke="#4cc9f0" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div><div class="step">Reports</div></div>
+        <div id="s7-ai-pillars" style="position: absolute; left: 200px; top: 500px; width: 1520px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px"><div class="pillar"><div class="pillar-t">Agents</div><div class="pillar-s">Plan, write, run and fix tests</div></div><div class="pillar"><div class="pillar-t">Context</div><div class="pillar-s">Project knowledge the agents work from</div></div><div class="pillar"><div class="pillar-t">Skills</div><div class="pillar-s">Reusable QA know-how for each task</div></div><div class="pillar"><div class="pillar-t">MCPs &amp; CLIs</div><div class="pillar-s">Hands on browsers, tools and pipelines</div></div></div>
+        <div id="s7-ai-tools" class="row" style="left: 200px; top: 760px; align-items: center"><div id="s7-ai-ai-githubcopilot" class="tile" style="width: 120px; height: 90px; "><img src="assets/logos/tools/githubcopilot.svg" alt="" /></div><div id="s7-ai-ai-playwright" class="tile" style="width: 120px; height: 90px; "><img src="assets/logos/tools/playwright.svg" alt="" /></div><div id="s7-ai-ai-ollama" class="tile" style="width: 120px; height: 90px; "><img src="assets/logos/tools/ollama.svg" alt="" /></div><div class="chip">Antigravity</div><div class="chip">Playwright MCP</div><div class="chip">LLMs</div></div>
+        <div id="s7-ai-human" class="chip" style="position: absolute; left: 200px; top: 890px; border-color: #3ddc84; color: #3ddc84">Human review &amp; debugging where it matters</div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s7-ai-stage", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "sine.out" }, 0);
+        tl.to("#s7-ai-stage", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, 7.15);
+        tl.fromTo("#s7-ai-head", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.05);
+        tl.fromTo("#s7-ai-title", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.15);
+        tl.fromTo("#s7-ai-sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.6);
+        tl.fromTo("#s7-ai-flow > *", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out", stagger: 0.09 }, 1.1);
+        // A highlight sweeps along the pipeline: the whole lifecycle is automated
+        tl.to("#s7-ai-flow .step", { backgroundColor: "#1d4a4a", borderColor: "#3ddc84", duration: 0.25, stagger: 0.12 }, 2.5);
+        tl.fromTo("#s7-ai-pillars > *", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)", stagger: 0.15 }, 3.0);
+        tl.fromTo("#s7-ai-tools > *", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", stagger: 0.08 }, 4.0);
+        tl.fromTo("#s7-ai-human", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 4.7);
+
+        window.__timelines["s7-ai"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

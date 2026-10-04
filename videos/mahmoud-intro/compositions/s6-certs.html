@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Montserrat, sans-serif;
+          color: #f4f6fb;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .label {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .h1 {
+          position: absolute;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        .h2 {
+          position: absolute;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .muted {
+          color: #a9b3d1;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 999px;
+          background: #18213f;
+          border: 2px solid #2a3561;
+          font-size: 28px;
+          font-weight: 700;
+          color: #dfe5f7;
+          white-space: nowrap;
+        }
+        .row {
+          position: absolute;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+        .tile img {
+          display: block;
+          max-width: 86%;
+          max-height: 80%;
+          object-fit: contain;
+        }
+
+        .heading {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .chips {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .chips .chip {
+          font-size: 23px;
+          padding: 9px 20px;
+        }
+        .achieve {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px 28px;
+          border-radius: 20px;
+          background: rgba(255, 209, 102, 0.08);
+          border: 2px solid rgba(255, 209, 102, 0.55);
+        }
+        .achieve-title {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffd166;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+        .achieve-item {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #f4f6fb;
+        }
+        .proj {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .proj-sub {
+          font-size: 22px;
+          font-weight: 700;
+          color: #a9b3d1;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s6-certs" data-width="1920" data-height="1080">
+        <div id="s6-certs-stage" class="stage">
+        <img id="s6-certs-photo" src="assets/photos/coffee-equations.jpg" alt="" style="position: absolute; left: 1330px; top: 110px; width: 390px; height: 860px; object-fit: cover; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.5)" />
+        <div id="s6-certs-head" class="heading" style="left: 200px; top: 170px">Certifications &amp; education</div>
+        <div id="s6-certs-istqb" style="position: absolute; left: 200px; top: 230px; display: flex; align-items: center; gap: 28px">
+          <div id="s6-certs-istqb-tile" class="tile" style="width: 280px; height: 140px; "><img src="assets/logos/companies/istqb.svg" alt="" /></div>
+          <div><div class="h2" style="position: static; font-size: 42px">ISTQB Certified Tester</div><div class="muted" style="font-size: 28px; font-weight: 700">Foundation Level (CTFL)</div></div>
+        </div>
+        <div id="s6-certs-courses" style="position: absolute; left: 200px; top: 420px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; width: 1080px">
+          <div id="s6-certs-blaze" class="tile" style="width: 230px; height: 100px; "><img src="assets/logos/companies/blazemeter.svg" alt="" /></div>
+          <div class="chip">Apache JMeter PRO</div>
+          <div id="s6-certs-udemy" class="tile" style="width: 100px; height: 100px; "><img src="assets/logos/tools/udemy.svg" alt="" /></div>
+          <div class="chip">Playwright Python · Selenium WebDriver · DevOps</div>
+        </div>
+        <div id="s6-certs-edu" style="position: absolute; left: 200px; top: 640px; display: flex; align-items: center; gap: 28px">
+          <div id="s6-certs-alexu" class="tile" style="width: 360px; height: 140px; "><img src="assets/logos/companies/alexu.webp" alt="" /></div>
+          <div><div class="h2" style="position: static; font-size: 40px">B.Sc. Mechanical Engineering</div><div class="muted" style="font-size: 28px; font-weight: 700">Alexandria University · 2016</div></div>
+        </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s6-certs-stage", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "sine.out" }, 0);
+        tl.to("#s6-certs-stage", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, 4.15);
+        tl.fromTo("#s6-certs-photo", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.05);
+        tl.fromTo("#s6-certs-head", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.05);
+        tl.fromTo("#s6-certs-istqb", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.2);
+        tl.fromTo("#s6-certs-courses > *", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", stagger: 0.08 }, 0.7);
+        tl.fromTo("#s6-certs-edu", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 1.3);
+
+        window.__timelines["s6-certs"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
