@@ -1,0 +1,55 @@
+zephyr: site-01 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/0257e251-443e-408a-11e9-cc589df6eb00/public
+zephyr: site-02 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/72740f36-a1e4-464f-dea0-354dc52f2a00/public
+zephyr: site-03 <- https://static1.smartbear.co/smartbearbrand/media/images/product/zephyr/zephyr-adding-users.png
+zephyr: site-04 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Document-Review.svg
+zephyr: site-05 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Automated-Testing-Object-Recognition.svg
+zephyr: site-06 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Test-Drag-n-Drop.svg
+zephyr: site-07 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Integration.svg
+zephyr: site-08 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Metrics.svg
+zephyr: site-09 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/0257e251-443e-408a-11e9-cc589df6eb00/public
+zephyr: site-10 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/72740f36-a1e4-464f-dea0-354dc52f2a00/public
+zephyr: site-11 <- https://static1.smartbear.co/smartbearbrand/media/images/product/zephyr/zephyr-adding-users.png
+zephyr: site-12 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Document-Review.svg
+zephyr: site-13 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Automated-Testing-Object-Recognition.svg
+zephyr: site-14 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Test-Drag-n-Drop.svg
+zephyr: site-15 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Integration.svg
+zephyr: site-16 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Metrics.svg
+zephyr: site-17 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/0257e251-443e-408a-11e9-cc589df6eb00/public
+zephyr: site-18 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/72740f36-a1e4-464f-dea0-354dc52f2a00/public
+zephyr: site-19 <- https://static1.smartbear.co/smartbearbrand/media/images/product/zephyr/zephyr-adding-users.png
+zephyr: site-20 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Document-Review.svg
+zephyr: site-21 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Automated-Testing-Object-Recognition.svg
+zephyr: site-22 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Test-Drag-n-Drop.svg
+zephyr: site-23 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Integration.svg
+zephyr: site-24 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Metrics.svg
+zephyr: site-25 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/0257e251-443e-408a-11e9-cc589df6eb00/public
+zephyr: site-26 <- https://imagedelivery.net/PVooPtpJE-25QaNkbEuXvw/72740f36-a1e4-464f-dea0-354dc52f2a00/public
+zephyr: site-27 <- https://static1.smartbear.co/smartbearbrand/media/images/product/zephyr/zephyr-adding-users.png
+zephyr: site-28 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Document-Review.svg
+zephyr: site-29 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Automated-Testing-Object-Recognition.svg
+zephyr: site-30 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/Test-Drag-n-Drop.svg
+zephyr: site-31 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Integration.svg
+zephyr: site-32 <- https://smartbear.com/hubs-static-assets/images/zephyr/capabilities/CO_OV_Metrics.svg
+zephyr: site-33 <- https://marketplace.atlassian.com/amkt-frontend-static/public/favicon.ico
+zephyr: site-34 <- https://marketplace.atlassian.com/amkt-frontend-static/public/apple-touch-icon.png
+zephyr: site-35 <- https://marketplace.atlassian.com/product-listing/files/21e0e981-8198-45f3-9653-331ffd960756?fileType=image&mode=full-fit
+zephyr: site-36 <- https://marketplace.atlassian.com/product-listing/files/479d33c2-93c8-4afb-bda5-ef68b9f04166?fileType=image&mode=full-fit
+zephyr: site-37 <- https://i.ytimg.com/vi_webp/t25uy1XRkTs/hqdefault.webp
+zephyr: site-38 <- https://marketplace.atlassian.com/product-listing/files/6716d0e4-64f0-4eec-8bca-1a7a08073e4f?width=1350&height=900
+zephyr: site-39 <- https://marketplace.atlassian.com/product-listing/files/099e3005-c477-48ff-8cfb-a61bce83697a?width=300&height=160&mode=crop
+zephyr: site-40 <- https://marketplace.atlassian.com/product-listing/files/8bdfc102-3274-4780-bd5f-f31e9060d65d?width=300&height=160&mode=crop
+zephyr: inline-01.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1213259/zephyr-test-management-and-automation-for-jira
+zephyr: inline-02.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1213259/zephyr-test-management-and-automation-for-jira
+zephyr: inline-03.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1213259/zephyr-test-management-and-automation-for-jira
+zephyr: site-41 <- https://marketplace.atlassian.com/amkt-frontend-static/public/favicon.ico
+zephyr: site-42 <- https://marketplace.atlassian.com/amkt-frontend-static/public/apple-touch-icon.png
+zephyr: site-43 <- https://marketplace.atlassian.com/product-listing/files/f15fa1c0-7f66-435b-98ce-59c713be2522?fileType=image&mode=full-fit
+zephyr: site-44 <- https://marketplace.atlassian.com/product-listing/files/a84eb767-616c-43a5-804b-b8b78c643621?fileType=image&mode=full-fit
+zephyr: site-45 <- https://i.ytimg.com/vi_webp/918WWEQDyRs/hqdefault.webp
+zephyr: site-46 <- https://marketplace.atlassian.com/product-listing/files/3a601ecd-3100-446a-91dd-fa8f253be454?width=300&height=160&mode=crop
+zephyr: inline-04.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1014681/zephyr-essential-test-management-for-jira
+zephyr: inline-05.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1014681/zephyr-essential-test-management-for-jira
+zephyr: inline-06.svg <- inline <svg> on https://marketplace.atlassian.com/apps/1014681/zephyr-essential-test-management-for-jira
+zephyr: commons-01 <- File:Poems - original and selected (IA poemsdmbenn00bennrich).pdf https://upload.wikimedia.org/wikipedia/commons/9/96/Poems_-_original_and_selected_%28IA_poemsdmbenn00bennrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+zephyr: commons-02 <- File:Vestiges of the Spirit-History of Man (IA dli.granth.41274).pdf https://upload.wikimedia.org/wikipedia/commons/b/be/Vestiges_of_the_Spirit-History_of_Man_%28IA_dli.granth.41274%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+zephyr: https://upload.wikimedia.org/wikipedia/commons/e/ea/Poems%2C_original_and_selected_%28IA_poemsoriginalsel00benn%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original failed: HTTP Error 429: Too many requests (f061ab2)
