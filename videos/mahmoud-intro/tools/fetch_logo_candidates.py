@@ -173,6 +173,9 @@ def main():
             folder = os.path.join(OUT, key)
             from_site(key, pages.split(), keyword, folder, log)
             from_commons(key, term, folder, log)
+    if not log:
+        print("No logos listed to fetch.")
+        return
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "SOURCES.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(log) + "\n")
