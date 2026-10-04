@@ -8,3 +8,6 @@ node_modules/
 # Render output folders
 renders/
 .debug/
+
+# Python bytecode
+__pycache__/
