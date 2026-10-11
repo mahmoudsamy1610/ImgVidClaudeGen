@@ -1,4 +1,4 @@
-# HyperFrameClaude
+# ImgVidClaudeGen
 
 [HyperFrames](https://hyperframes.heygen.com) projects that render HTML compositions to MP4. The repo holds two videos:
 
@@ -71,8 +71,8 @@ Every run lists its download links in the run's **Summary** on the **Actions** t
 - **Latest render of a branch (stable link).** Each branch has links that always serve its newest renders as plain MP4s:
 
   ```
-  https://github.com/mahmoudsamy1610/HyperFrameClaude/releases/download/preview-main/video.mp4
-  https://github.com/mahmoudsamy1610/HyperFrameClaude/releases/download/intro-preview-main/mahmoud-intro.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/preview-main/video.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/intro-preview-main/mahmoud-intro.mp4
   ```
 
   For another branch, replace `main` with the branch name, with `/` replaced by `-`. The previews are also listed under **Releases**, marked as pre-releases.
