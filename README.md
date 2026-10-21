@@ -4,6 +4,7 @@
 
 - **The children's story** at the repo root (described first below).
 - **Mahmoud Samy's video CV** in `videos/mahmoud-intro/` (see [Video CV](#video-cv-mahmoud-samy)).
+- **QA Engine walkthrough** in `videos/qa-engine/` (see [QA Engine walkthrough](#qa-engine-walkthrough)).
 
 The current video is **بيني الحلزون والمشوار الكبير** (Benny the Snail's Big Delivery), a 98-second children's story narrated in Egyptian Arabic, at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
@@ -53,9 +54,9 @@ npx hyperframes render --quality high --output video.mp4    # final quality
 
 ## Render on GitHub Actions
 
-The workflow in `.github/workflows/render.yml` lints and renders both videos at high quality, side by side: the story as `video.mp4` and the video CV as `mahmoud-intro.mp4`. It runs in three cases:
+The workflow in `.github/workflows/render.yml` lints and renders all three videos at high quality, side by side: the story as `video.mp4`, the video CV as `mahmoud-intro.mp4`, and the QA Engine walkthrough as `qa-engine.mp4`. It runs in three cases:
 
-- **On every push to any branch.** Each video is uploaded as an artifact, and the branch's preview pre-releases are replaced with the new renders: `preview-<branch>` for the story and `intro-preview-<branch>` for the video CV (with `/` in the branch name replaced by `-`). If you push again while a render is still running, the older run is cancelled.
+- **On every push to any branch.** Each video is uploaded as an artifact, and the branch's preview pre-releases are replaced with the new renders: `preview-<branch>` for the story, `intro-preview-<branch>` for the video CV and `qa-engine-preview-<branch>` for the QA Engine walkthrough (with `/` in the branch name replaced by `-`). If you push again while a render is still running, the older run is cancelled.
 - **Manually.** On the repo's **Actions** tab, pick **Render videos**, then **Run workflow**.
 - **On a version tag.** Push a tag that starts with `v`. Both videos are also attached to a GitHub Release for that tag.
 
@@ -73,6 +74,7 @@ Every run lists its download links in the run's **Summary** on the **Actions** t
   ```
   https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/preview-main/video.mp4
   https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/intro-preview-main/mahmoud-intro.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/qa-engine-preview-main/qa-engine.mp4
   ```
 
   For another branch, replace `main` with the branch name, with `/` replaced by `-`. The previews are also listed under **Releases**, marked as pre-releases.
@@ -102,3 +104,21 @@ All scene files are in `videos/mahmoud-intro/compositions/`. To work on the vide
 - **Sound effects:** a soft whoosh on each scene change and a chime on the contact card (`assets/audio/sfx/`).
 - **Logos:** `assets/logos/`. Tool logos come from Devicon and Simple Icons. Company logos were downloaded from each owner's website by `.github/workflows/fetch-logos.yml`, which collects candidates from the sites listed in `tools/logo-sources.tsv` for review. Every file's source is listed in `assets/logos/SOURCES.md`.
 - **Photos:** `assets/photos/`. Location and camera metadata were removed.
+
+## QA Engine walkthrough
+
+`videos/qa-engine/` is a 57-second, 1920x1080 animated walkthrough of the "QA Engine, end to end" diagram (`qa-engine-map.html`), in that diagram's dark-mode palette and fonts, with an original music bed and no voiceover. It renders to about 16 MB.
+
+| Time | Scene file | Content |
+| --- | --- | --- |
+| 0–5.5s | `s1-title.html` | Title, version, summary, 23 skills · 7 sub-agents · 4 MCP servers |
+| 5.5–12s | `s2-drivers.html` | Who drives: you (QA lead) and the orchestrator with its two hats |
+| 12–20s | `s3-phases-qa.html` | Phases 1–2 (QA Manager hat): skills, agents, outputs, gates |
+| 20–28s | `s4-phases-dev.html` | Phases 3–3b (Development Manager hat) |
+| 28–34.5s | `s5-phases-more.html` | Phases 3c–3d |
+| 34.5–40s | `s6-flow.html` | The whole flow, with every approval gate |
+| 40–45s | `s7-side.html` | Team task board, picking work, onboarding, untrusted input |
+| 45–52.5s | `s8-infra.html` | MCP servers, external systems, project repo files |
+| 52.5–57s | `s9-outro.html` | Summary and legend |
+
+Fonts (Bricolage Grotesque, IBM Plex Sans and Mono, SIL Open Font License) are embedded from `assets/fonts/`. The music is made by `tools/music.py`.

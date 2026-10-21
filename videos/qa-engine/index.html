@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #10151d;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- QA Engine, end to end: a 57s animated walkthrough of the qa-engine-map diagram. -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="57"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <!-- Track 0: background -->
+      <div id="bg" class="clip" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="57" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 1: scenes -->
+      <div id="s1-title" class="clip" data-composition-id="s1-title" data-composition-src="compositions/s1-title.html" data-start="0" data-duration="5.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s2-drivers" class="clip" data-composition-id="s2-drivers" data-composition-src="compositions/s2-drivers.html" data-start="5.5" data-duration="6.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s3-phases-qa" class="clip" data-composition-id="s3-phases-qa" data-composition-src="compositions/s3-phases-qa.html" data-start="12" data-duration="8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s4-phases-dev" class="clip" data-composition-id="s4-phases-dev" data-composition-src="compositions/s4-phases-dev.html" data-start="20" data-duration="8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s5-phases-more" class="clip" data-composition-id="s5-phases-more" data-composition-src="compositions/s5-phases-more.html" data-start="28" data-duration="6.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s6-flow" class="clip" data-composition-id="s6-flow" data-composition-src="compositions/s6-flow.html" data-start="34.5" data-duration="5.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s7-side" class="clip" data-composition-id="s7-side" data-composition-src="compositions/s7-side.html" data-start="40" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s8-infra" class="clip" data-composition-id="s8-infra" data-composition-src="compositions/s8-infra.html" data-start="45" data-duration="7.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s9-outro" class="clip" data-composition-id="s9-outro" data-composition-src="compositions/s9-outro.html" data-start="52.5" data-duration="4.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 3: a soft whoosh on each scene change, a chime on the closing card -->
+      <audio id="sfx-whoosh-1" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="5.35" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-2" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="11.85" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-3" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="19.85" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-4" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="27.85" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-5" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="34.35" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-6" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="39.85" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-7" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="44.85" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-whoosh-8" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="52.35" data-duration="0.57" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="sfx-end-chime" data-audio-group="sfx" src="assets/audio/sfx/chime.mp3" data-start="53.1" data-duration="2.5" data-track-index="3" data-volume="0.35"></audio>
+
+      <!-- Track 4: original music bed (tools/music.py) -->
+      <audio id="music-bed" data-audio-group="music" src="assets/audio/music/bed.mp3" data-start="0" data-duration="57" data-track-index="4" data-volume="0.75"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
