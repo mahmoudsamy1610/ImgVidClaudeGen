@@ -46,6 +46,12 @@ jobs:
             file: qa-engine.mp4
             artifact: qa-engine
             preview_prefix: qa-engine-preview
+          # AI-Driven QA Engine presentation (board deck, iHorizons design)
+          - name: qa-engine-board
+            dir: videos/qa-engine-board
+            file: qa-engine-board.mp4
+            artifact: qa-engine-board
+            preview_prefix: qa-board-preview
     steps:
       - name: Check out repository
         uses: actions/checkout@v4

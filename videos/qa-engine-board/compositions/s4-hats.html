@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Carlito"; font-weight: 400; src: url("assets/fonts/carlito-latin-400-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Carlito"; font-weight: 700; src: url("assets/fonts/carlito-latin-700-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Noto Sans"; font-weight: 800; src: url("assets/fonts/noto-sans-latin-800-normal.woff2") format("woff2"); }
+
+        #root { position: absolute; inset: 0; overflow: hidden; font-family: "Carlito", sans-serif; color: #1a1a1a; }
+        .stage { position: absolute; inset: 0; }
+        .kicker {
+          position: absolute;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #00539B;
+          padding-bottom: 6px;
+          border-bottom: 3px solid #FDBB30;
+        }
+        .title {
+          position: absolute;
+          font-size: 64px;
+          font-weight: 700;
+          line-height: 1.1;
+          color: #00539B;
+          padding-left: 34px;
+        }
+        .title::before { content: ""; position: absolute; left: 0; top: 0.12em; bottom: 0.14em; width: 9px; background: #FDBB30; }
+        .lede { position: absolute; font-size: 32px; line-height: 1.5; color: #6b6b6b; }
+        .node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 8px;
+          padding: 18px 12px;
+          border: 2px solid;
+        }
+        .node-t { font-size: 27px; font-weight: 700; line-height: 1.15; }
+        .node-s { font-size: 20px; line-height: 1.25; color: #6b6b6b; }
+        .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; }
+        .arrow-l { font-size: 19px; font-weight: 700; color: #6b6b6b; text-align: center; line-height: 1.15; }
+        .arrow-bar { position: relative; height: 4px; background: linear-gradient(90deg, #c6d2e0, #00539B); transform-origin: 0 50%; }
+        .arrow-bar::after { content: ""; position: absolute; right: -3px; top: 50%; margin-top: -8px; border-left: 13px solid #00539B; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+        .branch { display: flex; flex-direction: column; gap: 18px; padding-left: 22px; border-left: 4px solid #c6d2e0; flex-shrink: 0; }
+        .gatebar {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 24px 32px;
+          background: #fff6d8;
+          border: 3px solid #e0a400;
+        }
+        .gate-t { font-size: 28px; font-weight: 700; letter-spacing: 0.06em; color: #8a5f00; }
+        .gate-s { font-size: 27px; color: #4d4d4d; margin-top: 2px; }
+        .note { position: absolute; font-size: 32px; line-height: 1.45; color: #4d4d4d; text-align: center; }
+        .hatb { display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; padding: 8px 16px; border: 2px solid; }
+
+        .hatc { display: flex; flex-direction: column; gap: 18px; padding: 34px 36px; border: 2px solid #e1e7ef; background: #ffffff; }
+        .hatc .hatb { align-self: flex-start; }
+        .hat-s { font-size: 29px; line-height: 1.42; color: #4d4d4d; }
+        .hat-li { display: flex; align-items: center; gap: 12px; font-size: 29px; font-weight: 700; }
+      </style>
+
+      <div id="root" data-composition-id="s4-hats" data-width="1920" data-height="1080">
+        <div id="s4-hats-stage" class="stage">
+        <div id="s4-hats-kick" class="kicker" style="left: 200px; top: 160px">Who's in charge</div>
+        <div id="s4-hats-title" class="title" style="left: 200px; top: 215px">The Director wears two hats</div>
+        <div id="s4-hats-lede" class="lede" style="left: 200px; top: 310px; width: 1400px">The same Director switches his role depending on the stage, to keep knowledge and responsibilities clear and more focused.</div>
+        <div id="s4-hats-grid" style="position: absolute; left: 200px; top: 450px; width: 1520px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px"><div class="hatc"><span class="hatb" style="color: #01529B; background: #e7effb; border-color: #3f86d6; font-size: 30px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#01529B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>QA Manager hat</span><div class="hat-s">In the planning phases, delegates to the QA Agent and Document Agent to plan the tests and prepare the documents.</div><div class="hat-li"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#01529B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Signs off coverage</span></div><div class="hat-li"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#01529B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Owns quality</span></div></div><div class="hatc"><span class="hatb" style="color: #b04e00; background: #fff1e2; border-color: #fb8c00; font-size: 30px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#b04e00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>SDET hat</span><div class="hat-s">In the scripting phases, delegates to the Automation Agents to build, run, and report on the tests.</div><div class="hat-li"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#b04e00" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Runs tests on the live app</span></div><div class="hat-li"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#b04e00" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Logs the defects</span></div></div></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s4-hats-stage", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "sine.out" }, 0);
+        tl.to("#s4-hats-stage", { opacity: 0, x: -40, duration: 0.4, ease: "power2.in" }, 6.60);
+        tl.fromTo("#s4-hats-kick", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+        tl.fromTo("#s4-hats-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+        tl.fromTo("#s4-hats-lede", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.6);
+        tl.fromTo("#s4-hats-grid .hatc", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.5 }, 1.1);
+        tl.fromTo("#s4-hats-grid .hat-li", { opacity: 0, scale: 0.75 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.7)", stagger: 0.25 }, 2.4);
+
+        window.__timelines["s4-hats"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

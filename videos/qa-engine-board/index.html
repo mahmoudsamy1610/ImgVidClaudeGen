@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- AI-Driven QA Engine (board deck, iHorizons design): a 78.5s presentation-style video of the test-process steps. -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="78.5"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <!-- Track 0: shared slide chrome (white page, gold tick, blue/gold footer bar, logo) under the content scenes -->
+      <div id="frame" class="clip" data-composition-id="frame" data-composition-src="compositions/frame.html" data-start="5.5" data-duration="67.5" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 1: scenes -->
+      <div id="s1-cover" class="clip" data-composition-id="s1-cover" data-composition-src="compositions/s1-cover.html" data-start="0" data-duration="5.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s2-big-picture" class="clip" data-composition-id="s2-big-picture" data-composition-src="compositions/s2-big-picture.html" data-start="5.5" data-duration="9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s3-blocks" class="clip" data-composition-id="s3-blocks" data-composition-src="compositions/s3-blocks.html" data-start="14.5" data-duration="6.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s4-hats" class="clip" data-composition-id="s4-hats" data-composition-src="compositions/s4-hats.html" data-start="21" data-duration="7" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s5-phase1" class="clip" data-composition-id="s5-phase1" data-composition-src="compositions/s5-phase1.html" data-start="28" data-duration="9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s6-phase2" class="clip" data-composition-id="s6-phase2" data-composition-src="compositions/s6-phase2.html" data-start="37" data-duration="9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s7-phase3" class="clip" data-composition-id="s7-phase3" data-composition-src="compositions/s7-phase3.html" data-start="46" data-duration="9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s8-phase4" class="clip" data-composition-id="s8-phase4" data-composition-src="compositions/s8-phase4.html" data-start="55" data-duration="9.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s9-phase5" class="clip" data-composition-id="s9-phase5" data-composition-src="compositions/s9-phase5.html" data-start="64.5" data-duration="8.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s10-close" class="clip" data-composition-id="s10-close" data-composition-src="compositions/s10-close.html" data-start="73" data-duration="5.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 3: a soft whoosh on each slide change, a chime on the closing card -->
+      <audio id="sfx-whoosh-1" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="5.35" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-2" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="14.35" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-3" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="20.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-4" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="27.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-5" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="36.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-6" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="45.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-7" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="54.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-8" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="64.35" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-whoosh-9" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="72.85" data-duration="0.57" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="sfx-end-chime" data-audio-group="sfx" src="assets/audio/sfx/chime.mp3" data-start="73.6" data-duration="2.5" data-track-index="3" data-volume="0.35"></audio>
+
+      <!-- Track 4: original music bed (tools/music.py) -->
+      <audio id="music-bed" data-audio-group="music" src="assets/audio/music/bed.mp3" data-start="0" data-duration="78.5" data-track-index="4" data-volume="0.7"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

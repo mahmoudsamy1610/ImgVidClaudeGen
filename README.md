@@ -5,6 +5,7 @@
 - **The children's story** at the repo root (described first below).
 - **Mahmoud Samy's video CV** in `videos/mahmoud-intro/` (see [Video CV](#video-cv-mahmoud-samy)).
 - **QA Engine walkthrough** in `videos/qa-engine/` (see [QA Engine walkthrough](#qa-engine-walkthrough)).
+- **AI-Driven QA Engine presentation** in `videos/qa-engine-board/` (see [QA Engine presentation](#qa-engine-presentation)).
 
 The current video is **بيني الحلزون والمشوار الكبير** (Benny the Snail's Big Delivery), a 98-second children's story narrated in Egyptian Arabic, at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
@@ -54,9 +55,9 @@ npx hyperframes render --quality high --output video.mp4    # final quality
 
 ## Render on GitHub Actions
 
-The workflow in `.github/workflows/render.yml` lints and renders all three videos at high quality, side by side: the story as `video.mp4`, the video CV as `mahmoud-intro.mp4`, and the QA Engine walkthrough as `qa-engine.mp4`. It runs in three cases:
+The workflow in `.github/workflows/render.yml` lints and renders all four videos at high quality, side by side: the story as `video.mp4`, the video CV as `mahmoud-intro.mp4`, the QA Engine walkthrough as `qa-engine.mp4`, and the QA Engine presentation as `qa-engine-board.mp4`. It runs in three cases:
 
-- **On every push to any branch.** Each video is uploaded as an artifact, and the branch's preview pre-releases are replaced with the new renders: `preview-<branch>` for the story, `intro-preview-<branch>` for the video CV and `qa-engine-preview-<branch>` for the QA Engine walkthrough (with `/` in the branch name replaced by `-`). If you push again while a render is still running, the older run is cancelled.
+- **On every push to any branch.** Each video is uploaded as an artifact, and the branch's preview pre-releases are replaced with the new renders: `preview-<branch>` for the story, `intro-preview-<branch>` for the video CV, `qa-engine-preview-<branch>` for the QA Engine walkthrough and `qa-board-preview-<branch>` for the QA Engine presentation (with `/` in the branch name replaced by `-`). If you push again while a render is still running, the older run is cancelled.
 - **Manually.** On the repo's **Actions** tab, pick **Render videos**, then **Run workflow**.
 - **On a version tag.** Push a tag that starts with `v`. Both videos are also attached to a GitHub Release for that tag.
 
@@ -75,6 +76,7 @@ Every run lists its download links in the run's **Summary** on the **Actions** t
   https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/preview-main/video.mp4
   https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/intro-preview-main/mahmoud-intro.mp4
   https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/qa-engine-preview-main/qa-engine.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/qa-board-preview-main/qa-engine-board.mp4
   ```
 
   For another branch, replace `main` with the branch name, with `/` replaced by `-`. The previews are also listed under **Releases**, marked as pre-releases.
@@ -122,3 +124,18 @@ All scene files are in `videos/mahmoud-intro/compositions/`. To work on the vide
 | 52.5–57s | `s9-outro.html` | Summary and legend |
 
 Fonts (Bricolage Grotesque, IBM Plex Sans and Mono, SIL Open Font License) are embedded from `assets/fonts/`. The music is made by `tools/music.py`.
+
+## QA Engine presentation
+
+`videos/qa-engine-board/` is a 78.5-second, 1920x1080 presentation-style video built from the "AI-Driven QA Engine" board deck (iHorizons design). It focuses only on the test-process steps; the deck's agenda, live demo, requirements, challenges, future enhancements, security, technical-flow and Q&A slides are left out. Music only, no voiceover; it renders to about 12 MB.
+
+| Time | Scene file | Content |
+| --- | --- | --- |
+| 0–5.5s | `s1-cover.html` | Cover: AI-Driven QA Engine, iHorizons |
+| 5.5–14.5s | `s2-big-picture.html` | One smart assistant runs the whole testing cycle: 5 stages, each with a human approval gate |
+| 14.5–21s | `s3-blocks.html` | Four building blocks: Director, Agent, Skill, Connector |
+| 21–28s | `s4-hats.html` | The Director's two hats: QA Manager and SDET |
+| 28–73s | `s5-phase1.html` … `s9-phase5.html` | The five phases as animated flows, with their approval gates and takeaways |
+| 73–78.5s | `s10-close.html` | Closing card |
+
+The shared slide chrome (gold tick, blue/gold footer bar, logo) is `compositions/frame.html`. The iHorizons logos and the office photo come from the deck itself (`assets/images/`). Fonts are Carlito (metric-compatible with the deck's Calibri) and Noto Sans, both under the SIL Open Font License, embedded from `assets/fonts/`. The music is made by `tools/music.py`.
