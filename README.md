@@ -6,6 +6,7 @@
 - **Mahmoud Samy's video CV** in `videos/mahmoud-intro/` (see [Video CV](#video-cv-mahmoud-samy)).
 - **QA Engine walkthrough** in `videos/qa-engine/` (see [QA Engine walkthrough](#qa-engine-walkthrough)).
 - **AI-Driven QA Engine presentation** in `videos/qa-engine-board/` (see [QA Engine presentation](#qa-engine-presentation)).
+- **Claude loading GIF** in `videos/claude-loading-gif/` (see [Claude loading GIF](#claude-loading-gif)).
 
 The current video is **بيني الحلزون والمشوار الكبير** (Benny the Snail's Big Delivery), a 98-second children's story narrated in Egyptian Arabic, at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
@@ -139,3 +140,15 @@ Fonts (Bricolage Grotesque, IBM Plex Sans and Mono, SIL Open Font License) are e
 | 73–78.5s | `s10-close.html` | Closing card |
 
 The shared slide chrome (gold tick, blue/gold footer bar, logo) is `compositions/frame.html`. The iHorizons logos and the office photo come from the deck itself (`assets/images/`). Fonts are Carlito (metric-compatible with the deck's Calibri) and Noto Sans, both under the SIL Open Font License, embedded from `assets/fonts/`. The music is made by `tools/music.py`.
+
+## Claude loading GIF
+
+![Claude loading](videos/claude-loading-gif/claude-loading.gif)
+
+`videos/claude-loading-gif/` is an 800x120 GIF of Claude Code's "thinking" line: the pixel robot bobbing and blinking, the orange star spinner cycling its shapes (· ✢ ✳ ✶ ✻ ✽), and the verbs Clauding… Computing… Pondering… Schlepping… Fermenting… Noodling… Percolating… Cogitating… with a shimmer and a ticking "(Ns · esc to interrupt)". It is a seamless 10-second loop at 20 fps, about 335 KB. The rendered file is committed as `claude-loading.gif`.
+
+To re-render it, run this from `videos/claude-loading-gif/`:
+
+```bash
+npx hyperframes render --format gif --fps 20 --gif-loop 0 --output claude-loading.gif
+```
