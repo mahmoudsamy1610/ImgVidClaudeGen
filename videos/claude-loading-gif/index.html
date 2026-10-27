@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=800, height=120" />
+    <meta name="viewport" content="width=800, height=450" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
       * {
@@ -14,7 +14,7 @@
       body {
         margin: 0;
         width: 800px;
-        height: 120px;
+        height: 450px;
         overflow: hidden;
         background: #141413;
       }
@@ -28,8 +28,8 @@
   </head>
   <body>
     <!-- Claude Code loading line: pixel robot, spinning star and cycling verbs; a seamless 10s loop for a GIF. -->
-    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="800" data-height="120" data-fps="50">
-      <div id="loader" class="clip" data-composition-id="loader" data-composition-src="compositions/loader.html" data-start="0" data-duration="10" data-track-index="0" data-track-kind="graphics" data-width="800" data-height="120"></div>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="800" data-height="450" data-fps="50">
+      <div id="loader" class="clip" data-composition-id="loader" data-composition-src="compositions/loader.html" data-start="0" data-duration="10" data-track-index="0" data-track-kind="graphics" data-width="800" data-height="450"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
