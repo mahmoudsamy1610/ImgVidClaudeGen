@@ -145,10 +145,12 @@ The shared slide chrome (gold tick, blue/gold footer bar, logo) is `compositions
 
 ![Claude loading](videos/claude-loading-gif/claude-loading.gif)
 
-`videos/claude-loading-gif/` is an 800x120 GIF of Claude Code's "thinking" line: the pixel robot bobbing and blinking, the orange star spinner cycling its shapes (· ✢ ✳ ✶ ✻ ✽), and the verbs Clauding… Computing… Pondering… Schlepping… Fermenting… Noodling… Percolating… Cogitating… with a shimmer and a ticking "(Ns · esc to interrupt)". It is a seamless 10-second loop at 20 fps, about 335 KB. The rendered file is committed as `claude-loading.gif`.
+`videos/claude-loading-gif/` is an 800x120 GIF of Claude Code's "thinking" line: the pixel robot bobbing and blinking, the orange star spinner cycling its shapes (· ✢ ✳ ✶ ✻ ✽), and the verbs Clauding… Computing… Pondering… Schlepping… Fermenting… Noodling… Percolating… Cogitating… rolling through a ticker window with a shimmer and a ticking "(Ns · esc to interrupt)". It is a seamless 10-second loop at an even 50 fps, about 750 KB. The rendered file is committed as `claude-loading.gif`.
 
-To re-render it, run this from `videos/claude-loading-gif/`:
+To re-render it (needs Node and FFmpeg):
 
 ```bash
-npx hyperframes render --format gif --fps 20 --gif-loop 0 --output claude-loading.gif
+videos/claude-loading-gif/tools/render-gif.sh
 ```
+
+The script renders PNG frames and encodes the GIF with FFmpeg, because the built-in GIF output caps the frame rate and mixes uneven frame delays.
