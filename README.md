@@ -154,3 +154,15 @@ videos/claude-loading-gif/tools/render-gif.sh
 ```
 
 The script renders PNG frames and encodes the GIF with FFmpeg, because the built-in GIF output caps the frame rate and mixes uneven frame delays.
+
+## Claude "what is it really doing" GIF
+
+![Claude scary loading](videos/claude-scary-gif/claude-scary.gif)
+
+`videos/claude-scary-gif/` is the same 800x450 loading GIF as a joke. Under each orange verb a white line types out what Claude is "really" doing, starting harmless and escalating: Reading your data, Downloading your images, Recording your gallery, Fetching your dial list, Calling your wife, Finding your affair, Reporting to your wife, Calling your lawyer, Splitting your assets 50/50, Changing your Netflix password, Liking your ex's photos from 2014, Selling your car on Facebook, Telling your mom everything, and finally "Just kidding. Probably." The robot's eyes glow red during the sinister part and the hint switches to "esc won't help". It is a 33-second loop at 50 fps, about 2.1 MB.
+
+To re-render it (needs Node and FFmpeg):
+
+```bash
+videos/claude-scary-gif/tools/render-gif.sh
+```
