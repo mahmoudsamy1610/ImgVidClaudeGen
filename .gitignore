@@ -8,3 +8,13 @@ node_modules/
 # Render output folders
 renders/
 .debug/
+
+# Python bytecode
+__pycache__/
+
+# Secrets and local environments
+.env
+.venv/
+
+# Generated images stay local unless committed on purpose
+outputs/

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "JetBrains Mono", monospace; }
+        #ld-robot { position: absolute; left: 344px; top: 130px; width: 112px; height: 64px; }
+        #ld-spin { position: absolute; left: 95px; top: 238px; width: 34px; height: 34px; }
+        .ld-sp { position: absolute; left: 0; top: 0; opacity: 0; }
+        #ld-slot { position: absolute; left: 145px; top: 230px; width: 560px; height: 50px; overflow: hidden; }
+        .ld-verb { position: absolute; left: 0; top: 0; height: 50px; display: flex; align-items: center; gap: 18px; white-space: nowrap; opacity: 0; }
+        .ld-w {
+          font-size: 31px;
+          font-weight: 700;
+          color: #D97757;
+          background: linear-gradient(90deg, #D97757 0%, #D97757 38%, #ffe2d5 50%, #D97757 62%, #D97757 100%);
+          background-size: 300% 100%;
+          background-position: 100% 0;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .ld-meta { font-size: 21px; color: #8b8b86; }
+        #ld-sub { position: absolute; left: 145px; top: 286px; width: 560px; height: 34px; }
+        .ld-s { position: absolute; left: 0; top: 0; height: 34px; display: flex; align-items: center; white-space: nowrap; opacity: 0; font-size: 22px; color: #f2efe8; }
+        .ld-arr { color: #8b8b86; margin-right: 12px; }
+        .ld-st { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; }
+        .ld-cur { display: inline-block; width: 11px; height: 24px; margin-left: 3px; background: #f2efe8; }
+      </style>
+      <div id="root" data-composition-id="loader" data-width="800" data-height="450">
+        <svg id="ld-robot" viewBox="0 0 112 64" shape-rendering="crispEdges">
+          <g fill="#D97757"><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="32" y="0" width="8" height="8"/><rect x="40" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="56" y="0" width="8" height="8"/><rect x="64" y="0" width="8" height="8"/><rect x="72" y="0" width="8" height="8"/><rect x="80" y="0" width="8" height="8"/><rect x="88" y="0" width="8" height="8"/><rect x="16" y="8" width="8" height="8"/><rect x="24" y="8" width="8" height="8"/><rect x="32" y="8" width="8" height="8"/><rect x="40" y="8" width="8" height="8"/><rect x="48" y="8" width="8" height="8"/><rect x="56" y="8" width="8" height="8"/><rect x="64" y="8" width="8" height="8"/><rect x="72" y="8" width="8" height="8"/><rect x="80" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="0" y="16" width="8" height="8"/><rect x="8" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="40" y="16" width="8" height="8"/><rect x="48" y="16" width="8" height="8"/><rect x="56" y="16" width="8" height="8"/><rect x="64" y="16" width="8" height="8"/><rect x="80" y="16" width="8" height="8"/><rect x="88" y="16" width="8" height="8"/><rect x="96" y="16" width="8" height="8"/><rect x="104" y="16" width="8" height="8"/><rect x="0" y="24" width="8" height="8"/><rect x="8" y="24" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="40" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="56" y="24" width="8" height="8"/><rect x="64" y="24" width="8" height="8"/><rect x="80" y="24" width="8" height="8"/><rect x="88" y="24" width="8" height="8"/><rect x="96" y="24" width="8" height="8"/><rect x="104" y="24" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="24" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="40" y="32" width="8" height="8"/><rect x="48" y="32" width="8" height="8"/><rect x="56" y="32" width="8" height="8"/><rect x="64" y="32" width="8" height="8"/><rect x="72" y="32" width="8" height="8"/><rect x="80" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="16" y="40" width="8" height="8"/><rect x="24" y="40" width="8" height="8"/><rect x="32" y="40" width="8" height="8"/><rect x="40" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="56" y="40" width="8" height="8"/><rect x="64" y="40" width="8" height="8"/><rect x="72" y="40" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="64" y="48" width="8" height="8"/><rect x="80" y="48" width="8" height="8"/><rect x="24" y="56" width="8" height="8"/><rect x="40" y="56" width="8" height="8"/><rect x="64" y="56" width="8" height="8"/><rect x="80" y="56" width="8" height="8"/></g>
+          <g id="ld-eyes" fill="#141413"><rect x="32" y="16" width="8" height="8"/><rect x="72" y="16" width="8" height="8"/><rect x="32" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/></g>
+        </svg>
+        <div id="ld-spin"><svg id="ld-sp-0" class="ld-sp ld-sp-0" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><circle cx="12" cy="12" r="2.4"/></svg><svg id="ld-sp-1" class="ld-sp ld-sp-1" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><ellipse cx="12" cy="7.00" rx="2.3" ry="5.00" transform="rotate(0.0 12 12)"/><ellipse cx="12" cy="7.00" rx="2.3" ry="5.00" transform="rotate(90.0 12 12)"/><ellipse cx="12" cy="7.00" rx="2.3" ry="5.00" transform="rotate(180.0 12 12)"/><ellipse cx="12" cy="7.00" rx="2.3" ry="5.00" transform="rotate(270.0 12 12)"/></svg><svg id="ld-sp-2" class="ld-sp ld-sp-2" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(0.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(45.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(90.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(135.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(180.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(225.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(270.0 12 12)"/><ellipse cx="12" cy="7.00" rx="1.15" ry="5.00" transform="rotate(315.0 12 12)"/></svg><svg id="ld-sp-3" class="ld-sp ld-sp-3" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><polygon points="12.00,1.50 14.10,8.36 21.09,6.75 16.20,12.00 21.09,17.25 14.10,15.64 12.00,22.50 9.90,15.64 2.91,17.25 7.80,12.00 2.91,6.75 9.90,8.36"/></svg><svg id="ld-sp-4" class="ld-sp ld-sp-4" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(22.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(67.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(112.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(157.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(202.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(247.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(292.5 12 12)"/><ellipse cx="12" cy="6.75" rx="2.3" ry="5.25" transform="rotate(337.5 12 12)"/></svg><svg id="ld-sp-5" class="ld-sp ld-sp-5" viewBox="0 0 24 24" width="34" height="34" fill="#D97757"><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(0.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(45.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(90.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(135.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(180.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(225.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(270.0 12 12)"/><ellipse cx="12" cy="6.75" rx="3.1" ry="5.25" transform="rotate(315.0 12 12)"/></svg></div>
+        <div id="ld-slot"><div id="ld-v0" class="ld-verb"><span class="ld-w">Clauding…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v1" class="ld-verb"><span class="ld-w">Pondering…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v2" class="ld-verb"><span class="ld-w">Computing…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v3" class="ld-verb"><span class="ld-w">Schlepping…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v4" class="ld-verb"><span class="ld-w">Fermenting…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v5" class="ld-verb"><span class="ld-w">Noodling…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v6" class="ld-verb"><span class="ld-w">Percolating…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v7" class="ld-verb"><span class="ld-w">Cogitating…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v8" class="ld-verb"><span class="ld-w">Moseying…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc to interrupt)</span></div><div id="ld-v9" class="ld-verb"><span class="ld-w">Scheming…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v10" class="ld-verb"><span class="ld-w">Calculating…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v11" class="ld-verb"><span class="ld-w">Tinkering…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v12" class="ld-verb"><span class="ld-w">Simmering…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v13" class="ld-verb"><span class="ld-w">Hustling…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v14" class="ld-verb"><span class="ld-w">Wrapping up…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div><div id="ld-v15" class="ld-verb"><span class="ld-w">Relaxing…</span><span class="ld-meta">(<span class="ld-t">1</span>s · esc won&#39;t help)</span></div></div>
+        <div id="ld-sub"><div id="ld-s2" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Reading your data</span><span class="ld-cur"></span></div><div id="ld-s3" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Downloading your images</span><span class="ld-cur"></span></div><div id="ld-s4" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Recording your gallery</span><span class="ld-cur"></span></div><div id="ld-s5" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Fetching your dial list</span><span class="ld-cur"></span></div><div id="ld-s6" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Calling your wife</span><span class="ld-cur"></span></div><div id="ld-s7" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Finding your affair</span><span class="ld-cur"></span></div><div id="ld-s8" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Reporting to your wife</span><span class="ld-cur"></span></div><div id="ld-s9" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Calling your lawyer</span><span class="ld-cur"></span></div><div id="ld-s10" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Splitting your assets 50/50</span><span class="ld-cur"></span></div><div id="ld-s11" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Changing your Netflix password</span><span class="ld-cur"></span></div><div id="ld-s12" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Liking your ex&#39;s photos from 2014</span><span class="ld-cur"></span></div><div id="ld-s13" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Selling your car on Facebook</span><span class="ld-cur"></span></div><div id="ld-s14" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Telling your mom everything</span><span class="ld-cur"></span></div><div id="ld-s15" class="ld-s"><span class="ld-arr">└</span><span class="ld-st">Just kidding. Probably.</span><span class="ld-cur"></span></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const DUR = 33.0, STEP = 0.1, PINGPONG = [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], VERBS = 16;
+        const STARTS = [0.0, 1.4, 2.8, 4.9, 7.0, 9.1, 11.2, 13.3, 15.4, 17.5, 19.6, 21.7, 23.8, 25.9, 28.0, 30.1], PERS = [1.4, 1.4, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.9], SUB_LENS = [0, 0, 17, 23, 22, 23, 17, 19, 22, 19, 27, 30, 33, 28, 27, 23];
+        // Spinner: show one star shape at a time, ping-ponging through the six shapes.
+        for (let i = 0; i < 330; i++) {
+          const t = +(i * STEP).toFixed(3);
+          const f = PINGPONG[i % PINGPONG.length];
+          for (let k = 0; k < 6; k++) tl.set(".ld-sp-" + k, { opacity: k === f ? 1 : 0 }, t);
+        }
+        // Verbs: each one drops in, shimmers once, and hands over to the next.
+        for (let v = 0; v < VERBS; v++) {
+          const t = STARTS[v], PER = PERS[v];
+          // Glide in from below, then drift up and fade out as the next verb arrives.
+          // The incoming verb starts while the outgoing one is still leaving, so there is no blank gap.
+          const tin = v === 0 ? 0 : +(t - 0.12).toFixed(3);
+          tl.fromTo("#ld-v" + v, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.34, ease: "power3.out" }, tin);
+          tl.to("#ld-v" + v, { opacity: 0, y: -50, duration: 0.26, ease: "power2.in" }, +(t + PER - 0.22).toFixed(3));
+          tl.fromTo("#ld-v" + v + " .ld-w", { backgroundPosition: "100% 0" }, { backgroundPosition: "0% 0", duration: PER, ease: "sine.inOut" }, t);
+          // The white line underneath types out what it is "really" doing, with a blinking cursor.
+          const n = SUB_LENS[v];
+          if (!n) continue;
+          const s = "#ld-s" + v, ts = +(t + 0.3).toFixed(3), type = Math.min(1.0, n * 0.045);
+          tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.12 }, ts);
+          tl.fromTo(s + " .ld-st", { width: "0ch" }, { width: n + "ch", duration: type, ease: "steps(" + n + ")" }, ts);
+          tl.set(s + " .ld-cur", { opacity: 1 }, 0);
+          tl.to(s + " .ld-cur", { opacity: 0, duration: 0.25, ease: "steps(1)", yoyo: true, repeat: Math.max(1, Math.floor((PER - 0.6) / 0.25)) }, +(ts + type).toFixed(3));
+          tl.to(s, { opacity: 0, duration: 0.2, ease: "power2.in" }, +(t + PER - 0.22).toFixed(3));
+        }
+        // Elapsed-seconds counter, like "(3s · esc to interrupt)".
+        for (let s = 1; s <= DUR; s++) tl.set(".ld-t", { innerText: String(s) }, s - 1);
+        // Robot: gentle bob (an even number of half-cycles, so it ends where it started) and a few blinks.
+        tl.fromTo("#ld-robot", { y: 0 }, { y: -6, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 65 }, 0);
+        tl.set("#ld-eyes", { scaleY: 1, transformOrigin: "50% 50%", fill: "#141413" }, 0);
+        // Eyes glow red once things get sinister, then go back to innocent for "Just kidding".
+        tl.to("#ld-eyes", { fill: "#ff4d3d", duration: 0.3 }, STARTS[7]);
+        tl.to("#ld-eyes", { fill: "#141413", duration: 0.3 }, STARTS[15]);
+        for (const b of [1.8, 5.3, 8.4, 13.1, 17.6, 21.9, 26.4, 31.2]) tl.to("#ld-eyes", { scaleY: 0.15, duration: 0.07, yoyo: true, repeat: 1 }, b);
+        window.__timelines["loader"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

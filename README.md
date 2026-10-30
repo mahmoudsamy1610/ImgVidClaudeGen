@@ -1,14 +1,20 @@
-# HyperFrameClaude
+# ImgVidClaudeGen
 
-A [HyperFrames](https://hyperframes.heygen.com) project that renders an HTML composition to MP4. The sample is a 10-second, 1920x1080, 30fps title card: a dark background, a title that fades in, a subtitle that slides up, and a fade-out at the end.
+[HyperFrames](https://hyperframes.heygen.com) projects that render HTML compositions to MP4. The repo holds two videos:
 
-## Edit the video
+- **The children's story** at the repo root (described first below).
+- **Mahmoud Samy's video CV** in `videos/mahmoud-intro/` (see [Video CV](#video-cv-mahmoud-samy)).
+- **QA Engine walkthrough** in `videos/qa-engine/` (see [QA Engine walkthrough](#qa-engine-walkthrough)).
+- **AI-Driven QA Engine presentation** in `videos/qa-engine-board/` (see [QA Engine presentation](#qa-engine-presentation)).
+- **Claude loading GIF** in `videos/claude-loading-gif/` (see [Claude loading GIF](#claude-loading-gif)).
 
-Everything lives in `index.html`:
+The current video is **بيني الحلزون والمشوار الكبير** (Benny the Snail's Big Delivery), a 98-second children's story narrated in Egyptian Arabic, at 1920x1080 and 30fps. Benny, the slowest snail in the garden, has to deliver a birthday leaf before sunset. Rabbit and Squirrel race ahead but get distracted, and Benny arrives just in time.
 
-- **Text and styling**: the `#title` and `#subtitle` elements and the `<style>` block.
-- **Timing and animation**: the GSAP timeline in the `<script>` at the bottom. The third argument of each tween is its start time in seconds.
-- **Length, size and frame rate**: the `data-duration`, `data-width`, `data-height` and `data-fps` attributes on `#root`.
+## Edit the story
+
+- **`index.html`** is the timeline. It places the scenes, the narration clips, the sound effects and the music. Each clip's `data-start` and `data-duration` set when it plays, in seconds.
+- **`compositions/world.html`** is the garden backdrop that runs under the whole story. The sun sets and the sky turns from day to sunset to dusk.
+- **`compositions/s1-title.html` to `s8-end.html`** are the eight scenes. Each one holds its characters (drawn as inline SVG), the Arabic speech-bubble text (right-to-left, in the bundled Baloo Bhaijaan 2 font), and a GSAP timeline whose times are relative to the start of that scene.
 
 Preview your changes live in the browser with:
 
@@ -23,6 +29,20 @@ npx hyperframes lint    # static checks only
 npm run check           # lint plus runtime, layout, motion and contrast checks
 ```
 
+### Sound
+
+| Track | Files | Notes |
+| --- | --- | --- |
+| Narration | `assets/audio/narration/s1.mp3` to `s8.mp3` | One clip per scene, Egyptian Arabic text in `story/narration.tsv` |
+| Sound effects | `assets/audio/sfx/` | Chime, pop, sparkle and whoosh, timed to story moments |
+| Music | `assets/audio/music/musicbox.mp3` | Original tune made by `story/musicbox.py` |
+
+The music automatically dips under the narration.
+
+The narration is generated on GitHub by `.github/workflows/narration.yml`, using Microsoft Edge's Egyptian Arabic voice `ar-EG-SalmaNeural` through the [edge-tts](https://github.com/rany2/edge-tts) tool. Note that edge-tts uses an unofficial interface to Microsoft's read-aloud service. To change a line, edit it in `story/narration.tsv` (one `scene<TAB>text` per line) and push. The workflow regenerates the clips, records their lengths in `story/narration-durations.tsv`, and commits both back to the branch. You can also run it from the **Actions** tab under **Generate narration**.
+
+The workflow's own commit doesn't start a new video render (GitHub doesn't trigger workflows from commits made by workflows), so pull the new clips, check their timing, and push again to render. If a new clip is a different length, update its `data-duration` in `index.html` (and the scene's length if needed). Then refresh the music dip by running `carve.mjs` from the `hyperframes-audio` skill (`node <skill>/scripts/carve.mjs --comp index.html --bed music-bed`), or by re-running the carve in Studio. Audio sources and licenses are listed in `assets/audio/CREDITS.md`.
+
 ## Render locally
 
 You need Node 22+ and FFmpeg (`brew install ffmpeg` or `sudo apt install ffmpeg`).
@@ -36,10 +56,11 @@ npx hyperframes render --quality high --output video.mp4    # final quality
 
 ## Render on GitHub Actions
 
-The workflow in `.github/workflows/render.yml` lints the composition, renders `video.mp4` at high quality, and uploads it as a workflow artifact. It runs in two cases:
+The workflow in `.github/workflows/render.yml` lints and renders all four videos at high quality, side by side: the story as `video.mp4`, the video CV as `mahmoud-intro.mp4`, the QA Engine walkthrough as `qa-engine.mp4`, and the QA Engine presentation as `qa-engine-board.mp4`. It runs in three cases:
 
-- **Manually**: on the repo's **Actions** tab, pick **Render video**, then **Run workflow**.
-- **On a version tag**: push a tag that starts with `v`. The video is also attached to a GitHub Release for that tag.
+- **On every push to any branch.** Each video is uploaded as an artifact, and the branch's preview pre-releases are replaced with the new renders: `preview-<branch>` for the story, `intro-preview-<branch>` for the video CV, `qa-engine-preview-<branch>` for the QA Engine walkthrough and `qa-board-preview-<branch>` for the QA Engine presentation (with `/` in the branch name replaced by `-`). If you push again while a render is still running, the older run is cancelled.
+- **Manually.** On the repo's **Actions** tab, pick **Render videos**, then **Run workflow**.
+- **On a version tag.** Push a tag that starts with `v`. Both videos are also attached to a GitHub Release for that tag.
 
   ```bash
   git tag v1.0.0
@@ -48,5 +69,100 @@ The workflow in `.github/workflows/render.yml` lints the composition, renders `v
 
 ## Download the MP4
 
-- **From any run**: open the run on the **Actions** tab and download the `video` artifact under **Artifacts**. GitHub delivers it as a zip that contains `video.mp4`. Artifacts expire after 90 days by default.
-- **From a release**: open **Releases** and download `video.mp4` from the release's assets.
+Every run lists its download links in the run's **Summary** on the **Actions** tab.
+
+- **Latest render of a branch (stable link).** Each branch has links that always serve its newest renders as plain MP4s:
+
+  ```
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/preview-main/video.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/intro-preview-main/mahmoud-intro.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/qa-engine-preview-main/qa-engine.mp4
+  https://github.com/mahmoudsamy1610/ImgVidClaudeGen/releases/download/qa-board-preview-main/qa-engine-board.mp4
+  ```
+
+  For another branch, replace `main` with the branch name, with `/` replaced by `-`. The previews are also listed under **Releases**, marked as pre-releases.
+- **A specific run.** Open the run on the **Actions** tab and download the `video` or `mahmoud-intro` artifact under **Artifacts**. GitHub delivers each as a zip that contains the MP4. Artifacts expire after 90 days by default.
+- **A version release.** Open **Releases** and download `video.mp4` or `mahmoud-intro.mp4` from the release's assets.
+
+The repository is private, so all of these links only work for people signed in to GitHub with access to the repo.
+
+## Video CV: Mahmoud Samy
+
+`videos/mahmoud-intro/` is a separate HyperFrames project: a 51-second, 1920x1080 video CV with an original music bed, real photos, and the logos of the companies, projects, tools and certifications in the CV. It has no voiceover.
+
+| Time | Scene file | Content |
+| --- | --- | --- |
+| 0–4.5s | `s1-intro.html` | Headshot, name, title, Alexandria, years in QA |
+| 4.5–13s | `s2-ihorizons.html` | iHorizons: WOQOD and QNBN, all role points, achievement |
+| 13–23s | `s3-softxpert.html` | Softxpert: "Significantly improved the test process", Autofox, Autolina and Mumzworld, all role points, achievements |
+| 23–27s | `s4-tendegrees.html` | Ten Degrees: VOM, role points |
+| 27–35s | `s5-tools.html` | Testing skills, then tools by category: test automation, CI/CD & cloud, test management, manual & API testing, languages & IDEs |
+| 35–39.5s | `s6-certs.html` | ISTQB, courses, Alexandria University |
+| 39.5–47s | `s7-ai.html` | Semi-autonomous agentic QA: the automated QA lifecycle, agents, context, skills, MCPs & CLIs |
+| 47–51s | `s8-connect.html` | Contact details |
+
+All scene files are in `videos/mahmoud-intro/compositions/`. To work on the video locally, run commands from that folder (`npm run dev`, `npm run check`, `npx hyperframes render --output intro.mp4`). If you change a scene's length, update its slot in `index.html` (`data-start`, `data-duration`) and shift the scenes after it.
+
+- **Music:** `assets/audio/music/bed.mp3`, an original tune made by `tools/music.py` (set `TOTAL` to the video length and re-run it if the length changes).
+- **Sound effects:** a soft whoosh on each scene change and a chime on the contact card (`assets/audio/sfx/`).
+- **Logos:** `assets/logos/`. Tool logos come from Devicon and Simple Icons. Company logos were downloaded from each owner's website by `.github/workflows/fetch-logos.yml`, which collects candidates from the sites listed in `tools/logo-sources.tsv` for review. Every file's source is listed in `assets/logos/SOURCES.md`.
+- **Photos:** `assets/photos/`. Location and camera metadata were removed.
+
+## QA Engine walkthrough
+
+`videos/qa-engine/` is a 57-second, 1920x1080 animated walkthrough of the "QA Engine, end to end" diagram (`qa-engine-map.html`), in that diagram's dark-mode palette and fonts, with an original music bed and no voiceover. It renders to about 16 MB.
+
+| Time | Scene file | Content |
+| --- | --- | --- |
+| 0–5.5s | `s1-title.html` | Title, version, summary, 23 skills · 7 sub-agents · 4 MCP servers |
+| 5.5–12s | `s2-drivers.html` | Who drives: you (QA lead) and the orchestrator with its two hats |
+| 12–20s | `s3-phases-qa.html` | Phases 1–2 (QA Manager hat): skills, agents, outputs, gates |
+| 20–28s | `s4-phases-dev.html` | Phases 3–3b (Development Manager hat) |
+| 28–34.5s | `s5-phases-more.html` | Phases 3c–3d |
+| 34.5–40s | `s6-flow.html` | The whole flow, with every approval gate |
+| 40–45s | `s7-side.html` | Team task board, picking work, onboarding, untrusted input |
+| 45–52.5s | `s8-infra.html` | MCP servers, external systems, project repo files |
+| 52.5–57s | `s9-outro.html` | Summary and legend |
+
+Fonts (Bricolage Grotesque, IBM Plex Sans and Mono, SIL Open Font License) are embedded from `assets/fonts/`. The music is made by `tools/music.py`.
+
+## QA Engine presentation
+
+`videos/qa-engine-board/` is a 78.5-second, 1920x1080 presentation-style video built from the "AI-Driven QA Engine" board deck (iHorizons design). It focuses only on the test-process steps; the deck's agenda, live demo, requirements, challenges, future enhancements, security, technical-flow and Q&A slides are left out. Music only, no voiceover; it renders to about 12 MB.
+
+| Time | Scene file | Content |
+| --- | --- | --- |
+| 0–5.5s | `s1-cover.html` | Cover: AI-Driven QA Engine, iHorizons |
+| 5.5–14.5s | `s2-big-picture.html` | One smart assistant runs the whole testing cycle: 5 stages, each with a human approval gate |
+| 14.5–21s | `s3-blocks.html` | Four building blocks: Director, Agent, Skill, Connector |
+| 21–28s | `s4-hats.html` | The Director's two hats: QA Manager and SDET |
+| 28–73s | `s5-phase1.html` … `s9-phase5.html` | The five phases as animated flows, with their approval gates and takeaways |
+| 73–78.5s | `s10-close.html` | Closing card |
+
+The shared slide chrome (gold tick, blue/gold footer bar, logo) is `compositions/frame.html`. The iHorizons logos and the office photo come from the deck itself (`assets/images/`). Fonts are Carlito (metric-compatible with the deck's Calibri) and Noto Sans, both under the SIL Open Font License, embedded from `assets/fonts/`. The music is made by `tools/music.py`.
+
+## Claude loading GIF
+
+![Claude loading](videos/claude-loading-gif/claude-loading.gif)
+
+`videos/claude-loading-gif/` is an 800x450 (16:9, so chat apps like WhatsApp show it uncropped) GIF of Claude Code's "thinking" line: the pixel robot bobbing and blinking, the orange star spinner cycling its shapes (· ✢ ✳ ✶ ✻ ✽), and the verbs Clauding… Computing… Pondering… Schlepping… Fermenting… Noodling… Percolating… Cogitating… rolling through a ticker window with a shimmer and a ticking "(Ns · esc to interrupt)". It is a seamless 10-second loop at an even 50 fps, about 800 KB. The rendered file is committed as `claude-loading.gif`.
+
+To re-render it (needs Node and FFmpeg):
+
+```bash
+videos/claude-loading-gif/tools/render-gif.sh
+```
+
+The script renders PNG frames and encodes the GIF with FFmpeg, because the built-in GIF output caps the frame rate and mixes uneven frame delays.
+
+## Claude "what is it really doing" GIF
+
+![Claude scary loading](videos/claude-scary-gif/claude-scary.gif)
+
+`videos/claude-scary-gif/` is the same 800x450 loading GIF as a joke. Under each orange verb a white line types out what Claude is "really" doing, starting harmless and escalating: Reading your data, Downloading your images, Recording your gallery, Fetching your dial list, Calling your wife, Finding your affair, Reporting to your wife, Calling your lawyer, Splitting your assets 50/50, Changing your Netflix password, Liking your ex's photos from 2014, Selling your car on Facebook, Telling your mom everything, and finally "Just kidding. Probably." The robot's eyes glow red during the sinister part and the hint switches to "esc won't help". It is a 33-second loop at 50 fps, about 2.1 MB.
+
+To re-render it (needs Node and FFmpeg):
+
+```bash
+videos/claude-scary-gif/tools/render-gif.sh
+```

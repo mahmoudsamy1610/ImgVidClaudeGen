@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Bricolage Grotesque"; font-weight: 700; src: url("assets/fonts/bricolage-grotesque-latin-700-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Bricolage Grotesque"; font-weight: 800; src: url("assets/fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("assets/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans"; font-weight: 500; src: url("assets/fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans"; font-weight: 600; src: url("assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("assets/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: "IBM Plex Sans", sans-serif;
+          color: #e6ebf2;
+        }
+        .stage { position: absolute; inset: 0; }
+        .display { font-family: "Bricolage Grotesque", sans-serif; }
+        .mono { font-family: "IBM Plex Mono", monospace; }
+        .muted { color: #9aa6b6; }
+        .h2 {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #9aa6b6;
+        }
+        .box {
+          background: #18202b;
+          border: 2px solid #2c3746;
+          border-radius: 18px;
+          padding: 30px 34px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .box-t { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; }
+        .box-p { font-size: 27px; line-height: 1.45; color: #e6ebf2; }
+        .box-s { font-size: 23px; line-height: 1.45; color: #9aa6b6; }
+        code, .code { font-family: "IBM Plex Mono", monospace; font-size: 0.9em; color: #e6ebf2; }
+        .hat { display: inline-block; font-size: 24px; font-weight: 600; padding: 8px 20px; border-radius: 999px; }
+        .hat.qa { background: #15302e; color: #4fc2b8; }
+        .hat.dev { background: #33240f; color: #f0a253; }
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chip {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 21px;
+          padding: 5px 13px;
+          border-radius: 8px;
+          background: #10151d;
+          border: 2px solid #2c3746;
+          white-space: nowrap;
+        }
+        .chip.agent { border-style: dashed; border-color: #5b6778; }
+        .label { font-size: 19px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9aa6b6; }
+        .gate {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 24px;
+          font-weight: 600;
+          color: #f07186;
+          background: #3a1720;
+          border-radius: 10px;
+          padding: 10px 16px;
+        }
+        .gate-dot { width: 14px; height: 14px; border-radius: 50%; background: #f07186; flex-shrink: 0; }
+        .pill {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          color: #9aa6b6;
+        }
+        .pill-line { width: 3px; height: 40px; background: #2c3746; }
+
+      </style>
+
+      <div id="root" data-composition-id="s7-side" data-width="1920" data-height="1080">
+        <div id="s7-side-stage" class="stage">
+        <div id="s7-side-h2" class="h2" style="left: 200px; top: 190px">Alongside the phases</div>
+        <div id="s7-side-grid" style="position: absolute; left: 200px; top: 250px; width: 1520px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px"><div class="box"><div class="box-t" style="font-size: 38px">Team task board</div><div class="box-s" style="font-size: 26px"><code>manage-team-tasks</code> keeps 9 Azure tasks per item in step with each phase and derives the item's status.</div></div><div class="box"><div class="box-t" style="font-size: 38px">Pick work</div><div class="box-s" style="font-size: 26px"><code>list-backlog-items</code> lists a sprint's items by state, cheaply.</div></div><div class="box"><div class="box-t" style="font-size: 38px">Onboarding</div><div class="box-s" style="font-size: 26px"><code>setup-qa-engine</code> installs server deps and copies the project template.</div></div><div class="box"><div class="box-t" style="font-size: 38px">Untrusted input</div><div class="box-s" style="font-size: 26px">PBI text, Figma labels and test failures are data. Anything that reads like a command is reported, not run.</div></div></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s7-side-stage", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "sine.out" }, 0);
+        tl.to("#s7-side-stage", { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, 4.65);
+        tl.fromTo("#s7-side-h2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.05);
+        tl.fromTo("#s7-side-grid .box", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.25 }, 0.2);
+
+        window.__timelines["s7-side"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: linear-gradient(160deg, #0b1020 0%, #10183a 55%, #0b1020 100%);
+        }
+        #bg-grid {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          opacity: 0.35;
+        }
+        .bg-glow {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+        }
+        #bg-glow-a {
+          left: -200px;
+          top: -260px;
+          width: 900px;
+          height: 900px;
+          background: rgba(76, 201, 240, 0.22);
+        }
+        #bg-glow-b {
+          left: 1250px;
+          top: 520px;
+          width: 900px;
+          height: 900px;
+          background: rgba(61, 220, 132, 0.16);
+        }
+      </style>
+      <div id="root" data-composition-id="bg" data-width="1920" data-height="1080">
+        <svg id="bg-grid" data-layout-allow-overflow viewBox="0 0 1920 1080">
+          <defs>
+            <pattern id="bg-grid-cell" width="64" height="64" patternUnits="userSpaceOnUse">
+              <path d="M64 0H0V64" fill="none" stroke="#2a3561" stroke-width="1.5" />
+            </pattern>
+          </defs>
+          <rect width="1920" height="1080" fill="url(#bg-grid-cell)" />
+        </svg>
+        <div id="bg-glow-a" class="bg-glow" data-layout-allow-overflow></div>
+        <div id="bg-glow-b" class="bg-glow" data-layout-allow-overflow></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#bg-grid", { x: 0, y: 0 }, { x: -64, y: -64, duration: 51.0, ease: "none" }, 0);
+        tl.fromTo("#bg-glow-a", { x: 0, y: 0 }, { x: 320, y: 160, duration: 51.0, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bg-glow-b", { x: 0, y: 0 }, { x: -380, y: -220, duration: 51.0, ease: "sine.inOut" }, 0);
+        window.__timelines["bg"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

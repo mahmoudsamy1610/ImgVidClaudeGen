@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: Montserrat, sans-serif;
+          color: #f4f6fb;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .label {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .h1 {
+          position: absolute;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        .h2 {
+          position: absolute;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+        }
+        .muted {
+          color: #a9b3d1;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 999px;
+          background: #18213f;
+          border: 2px solid #2a3561;
+          font-size: 28px;
+          font-weight: 700;
+          color: #dfe5f7;
+          white-space: nowrap;
+        }
+        .row {
+          position: absolute;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+        .tile img {
+          display: block;
+          max-width: 86%;
+          max-height: 80%;
+          object-fit: contain;
+        }
+
+        .heading {
+          position: absolute;
+          font-size: 26px;
+          font-weight: 700;
+          color: #4cc9f0;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+        .chips {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .chips .chip {
+          font-size: 23px;
+          padding: 9px 20px;
+        }
+        .achieve {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px 28px;
+          border-radius: 20px;
+          background: rgba(255, 209, 102, 0.08);
+          border: 2px solid rgba(255, 209, 102, 0.55);
+        }
+        .achieve-title {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffd166;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+        .achieve-item {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #f4f6fb;
+        }
+        .proj {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .proj-sub {
+          font-size: 22px;
+          font-weight: 700;
+          color: #a9b3d1;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s3-softxpert" data-width="1920" data-height="1080">
+        <div id="s3-softxpert-stage" class="stage">
+        <div id="s3-softxpert-head" class="heading" style="left: 200px; top: 100px">Experience</div>
+        <img id="s3-softxpert-logo" src="assets/logos/companies/softxpert.png" alt="Softxpert" style="position: absolute; left: 200px; top: 145px; height: 76px" />
+        <div id="s3-softxpert-role" class="h2" style="left: 200px; top: 240px; font-size: 38px">Senior Software QA / QC Engineer <span class="muted">· Dec 2021 – Apr 2024</span></div>
+        <div id="s3-softxpert-headline" class="h1" style="left: 200px; top: 300px; font-size: 54px; color: #3ddc84">Significantly improved the test process</div>
+        <div id="s3-softxpert-projects" style="position: absolute; left: 200px; top: 390px; display: flex; gap: 36px">
+          <div id="s3-softxpert-p-autofox" class="proj"><div id="s3-softxpert-p-autofox-tile" class="tile" style="width: 280px; height: 96px; "><img src="assets/logos/companies/autofox.svg" alt="" /></div><div class="proj-sub">Autofox.ai · App · CRM</div></div>
+          <div id="s3-softxpert-p-autolina" class="proj"><div id="s3-softxpert-p-autolina-tile" class="tile" style="width: 280px; height: 96px; "><img src="assets/logos/companies/autolina.png" alt="" /></div><div class="proj-sub">Autolina · Web · CRM</div></div>
+          <div id="s3-softxpert-p-mumzworld" class="proj"><div id="s3-softxpert-p-mumzworld-tile" class="tile" style="width: 280px; height: 96px; "><img src="assets/logos/companies/mumzworld.svg" alt="" /></div><div class="proj-sub">Mumzworld · Web · App</div></div>
+        </div>
+        <div id="s3-softxpert-roles" class="chips" style="left: 200px; top: 545px; width: 1520px">
+          <div class="chip">Monitored &amp; enhanced test processes</div>
+          <div class="chip">Selected test management tools</div>
+          <div class="chip">Team resources &amp; quarterly KPIs</div>
+          <div class="chip">Mentoring &amp; training 5–6 engineers</div>
+          <div class="chip">Requirements analysis &amp; docs</div>
+          <div class="chip">Coordinated web, app, business &amp; design</div>
+          <div class="chip">Manual testing: Web · Mobile · APIs · DB</div>
+          <div class="chip">Test reports &amp; metrics</div>
+        </div>
+        <div id="s3-softxpert-ach" class="achieve" style="left: 200px; top: 738px; width: 1520px"><div class="achieve-title"><svg viewBox="0 0 24 24" width="40" height="40"><path d="M7 3h10v3h3v2a5 5 0 0 1-5 5h-.3A5 5 0 0 1 13 15v2h3v3H8v-3h3v-2a5 5 0 0 1-1.7-2H9a5 5 0 0 1-5-5V6h3V3zm-1 5a3 3 0 0 0 1 2V8H6zm12 0v2a3 3 0 0 0 1-2h-1z" fill="#ffd166" /></svg><span>Achievements</span></div><div class="achieve-item">Built an initial automation framework (Selenium + TestNG + REST Assured) that cut regression testing time</div><div class="achieve-item">Established full test processes for Autofox.ai &amp; Autolina, improving defect detection &amp; team accountability</div><div class="achieve-item">Migrated test management tools to keep projects running through power outages</div></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s3-softxpert-stage", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "sine.out" }, 0);
+        tl.to("#s3-softxpert-stage", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, 9.65);
+        tl.fromTo("#s3-softxpert-head", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.05);
+        tl.fromTo("#s3-softxpert-logo", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+        tl.fromTo("#s3-softxpert-role", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.4);
+        tl.fromTo("#s3-softxpert-headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.7);
+        tl.fromTo("#s3-softxpert-projects > *", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)", stagger: 0.15 }, 1.2);
+        tl.fromTo("#s3-softxpert-roles .chip", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", stagger: 0.12 }, 2.0);
+        tl.fromTo("#s3-softxpert-ach", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.6);
+
+        window.__timelines["s3-softxpert"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

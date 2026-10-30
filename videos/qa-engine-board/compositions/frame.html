@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; }
+        #frame-top { position: absolute; left: 0; top: 0; width: 260px; height: 6px; background: #FDBB30; transform-origin: 0 50%; }
+        #frame-bar { position: absolute; left: 0; bottom: 0; width: 1920px; height: 12px; display: flex; }
+        #frame-progress { position: absolute; left: 0; bottom: 12px; width: 1920px; height: 4px; background: #00539B; transform-origin: 0 50%; opacity: 0.35; }
+        #frame-logo { position: absolute; right: 60px; bottom: 34px; height: 36px; }
+      </style>
+      <div id="root" data-composition-id="frame" data-width="1920" data-height="1080">
+        <div id="frame-top"></div>
+        <div id="frame-progress"></div>
+        <div id="frame-bar"><div style="flex: 1; background: #00539B"></div><div style="flex: 1; background: #FDBB30"></div><div style="flex: 1; background: #f2f0e6"></div></div>
+        <img id="frame-logo" src="assets/images/ihorizons-logo.png" alt="iHorizons" />
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#frame-top", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.1);
+        tl.fromTo("#frame-progress", { scaleX: 0 }, { scaleX: 1, duration: 67.5, ease: "none" }, 0);
+        window.__timelines["frame"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #10151d; }
+        #bg-grid { position: absolute; inset: 0; width: 1920px; height: 1080px; opacity: 0.5; }
+        .bg-glow { position: absolute; border-radius: 50%; filter: blur(90px); }
+        #bg-glow-a { left: -260px; top: -300px; width: 900px; height: 900px; background: rgba(79, 194, 184, 0.14); }
+        #bg-glow-b { left: 1250px; top: 560px; width: 900px; height: 900px; background: rgba(240, 162, 83, 0.10); }
+      </style>
+      <div id="root" data-composition-id="bg" data-width="1920" data-height="1080">
+        <svg id="bg-grid" data-layout-allow-overflow viewBox="0 0 1920 1080">
+          <defs>
+            <pattern id="bg-grid-cell" width="64" height="64" patternUnits="userSpaceOnUse">
+              <path d="M64 0H0V64" fill="none" stroke="#1c2532" stroke-width="1.5" />
+            </pattern>
+          </defs>
+          <rect width="1920" height="1080" fill="url(#bg-grid-cell)" />
+        </svg>
+        <div id="bg-glow-a" class="bg-glow" data-layout-allow-overflow></div>
+        <div id="bg-glow-b" class="bg-glow" data-layout-allow-overflow></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#bg-grid", { x: 0, y: 0 }, { x: -64, y: -64, duration: 57, ease: "none" }, 0);
+        tl.fromTo("#bg-glow-a", { x: 0, y: 0 }, { x: 300, y: 180, duration: 57, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bg-glow-b", { x: 0, y: 0 }, { x: -360, y: -240, duration: 57, ease: "sine.inOut" }, 0);
+        window.__timelines["bg"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

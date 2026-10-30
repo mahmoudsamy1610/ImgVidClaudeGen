@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Carlito"; font-weight: 400; src: url("assets/fonts/carlito-latin-400-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Carlito"; font-weight: 700; src: url("assets/fonts/carlito-latin-700-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Noto Sans"; font-weight: 800; src: url("assets/fonts/noto-sans-latin-800-normal.woff2") format("woff2"); }
+
+        #root { position: absolute; inset: 0; overflow: hidden; font-family: "Carlito", sans-serif; color: #1a1a1a; }
+        .stage { position: absolute; inset: 0; }
+        .kicker {
+          position: absolute;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #00539B;
+          padding-bottom: 6px;
+          border-bottom: 3px solid #FDBB30;
+        }
+        .title {
+          position: absolute;
+          font-size: 64px;
+          font-weight: 700;
+          line-height: 1.1;
+          color: #00539B;
+          padding-left: 34px;
+        }
+        .title::before { content: ""; position: absolute; left: 0; top: 0.12em; bottom: 0.14em; width: 9px; background: #FDBB30; }
+        .lede { position: absolute; font-size: 32px; line-height: 1.5; color: #6b6b6b; }
+        .node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 8px;
+          padding: 18px 12px;
+          border: 2px solid;
+        }
+        .node-t { font-size: 27px; font-weight: 700; line-height: 1.15; }
+        .node-s { font-size: 20px; line-height: 1.25; color: #6b6b6b; }
+        .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; }
+        .arrow-l { font-size: 19px; font-weight: 700; color: #6b6b6b; text-align: center; line-height: 1.15; }
+        .arrow-bar { position: relative; height: 4px; background: linear-gradient(90deg, #c6d2e0, #00539B); transform-origin: 0 50%; }
+        .arrow-bar::after { content: ""; position: absolute; right: -3px; top: 50%; margin-top: -8px; border-left: 13px solid #00539B; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+        .branch { display: flex; flex-direction: column; gap: 18px; padding-left: 22px; border-left: 4px solid #c6d2e0; flex-shrink: 0; }
+        .gatebar {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 24px 32px;
+          background: #fff6d8;
+          border: 3px solid #e0a400;
+        }
+        .gate-t { font-size: 28px; font-weight: 700; letter-spacing: 0.06em; color: #8a5f00; }
+        .gate-s { font-size: 27px; color: #4d4d4d; margin-top: 2px; }
+        .note { position: absolute; font-size: 32px; line-height: 1.45; color: #4d4d4d; text-align: center; }
+        .hatb { display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; padding: 8px 16px; border: 2px solid; }
+
+        .blk { display: flex; gap: 26px; align-items: flex-start; padding: 32px 34px; border: 2px solid #e1e7ef; background: #ffffff; }
+        .blk-i { flex-shrink: 0; width: 84px; height: 84px; display: grid; place-items: center; border: 2px solid; }
+        .blk-t { font-size: 38px; font-weight: 700; margin-bottom: 6px; }
+        .blk-s { font-size: 28px; line-height: 1.4; color: #4d4d4d; }
+      </style>
+
+      <div id="root" data-composition-id="s3-blocks" data-width="1920" data-height="1080">
+        <div id="s3-blocks-stage" class="stage">
+        <div id="s3-blocks-kick" class="kicker" style="left: 200px; top: 170px">How it's built</div>
+        <div id="s3-blocks-title" class="title" style="left: 200px; top: 225px">Four simple building blocks</div>
+        <div id="s3-blocks-grid" style="position: absolute; left: 200px; top: 390px; width: 1520px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px"><div class="blk"><div class="blk-i" style="background: #e7effb; border-color: #3f86d6"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#01529B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div><div><div class="blk-t" style="color: #01529B">The Director</div><div class="blk-s">Coordinates and orchestrates our tasks, reviews results, and asks for human approval.</div></div></div><div class="blk"><div class="blk-i" style="background: #fff1e2; border-color: #fb8c00"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#b04e00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M9 16.5h6"/><circle cx="12" cy="3.5" r="1"/></svg></div><div><div class="blk-t" style="color: #b04e00">Agent</div><div class="blk-s">The specialist who performs specific tasks given by the Director.</div></div></div><div class="blk"><div class="blk-i" style="background: #f1eafb; border-color: #9666d8"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#6a3fb3" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/></svg></div><div><div class="blk-t" style="color: #6a3fb3">Skill</div><div class="blk-s">The list of instructions that guides the agent through its task, e.g. how it should write the test cases.</div></div></div><div class="blk"><div class="blk-i" style="background: #e6f6ec; border-color: #37a663"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#1c7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0zM12 16v5"/></svg></div><div><div class="blk-t" style="color: #1c7a45">Connector</div><div class="blk-s">The link that enables our agents to connect to other tools, like Azure DevOps and Figma.</div></div></div></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s3-blocks-stage", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "sine.out" }, 0);
+        tl.to("#s3-blocks-stage", { opacity: 0, x: -40, duration: 0.4, ease: "power2.in" }, 6.10);
+        tl.fromTo("#s3-blocks-kick", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.1);
+        tl.fromTo("#s3-blocks-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+        tl.fromTo("#s3-blocks-grid .blk", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.35 }, 0.8);
+
+        window.__timelines["s3-blocks"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

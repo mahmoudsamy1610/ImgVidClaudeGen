@@ -1,0 +1,50 @@
+name: Fetch logo candidates
+
+# Downloads company logo candidates for the intro video (sites block the agent
+# sandbox, so this runs on GitHub's machines) and commits them for review.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+    paths:
+      - videos/mahmoud-intro/tools/logo-sources.tsv
+      - videos/mahmoud-intro/tools/fetch_logo_candidates.py
+
+permissions:
+  contents: write # needed to commit the candidates back to the branch
+
+concurrency:
+  group: fetch-logos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch logo candidates
+        run: python videos/mahmoud-intro/tools/fetch_logo_candidates.py
+
+      - name: Commit candidates
+        run: |
+          if [ ! -d videos/mahmoud-intro/assets/logos/_candidates ]; then
+            echo "No candidates to commit."
+            exit 0
+          fi
+          git add videos/mahmoud-intro/assets/logos/_candidates
+          if git diff --cached --quiet; then
+            echo "No new candidates."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Fetch logo candidates for the intro video"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

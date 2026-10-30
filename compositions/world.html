@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #world-sky-day,
+        #world-sky-sunset,
+        #world-sky-dusk {
+          position: absolute;
+          inset: 0;
+        }
+        #world-sky-day {
+          background: linear-gradient(180deg, #7cc8f7 0%, #bfe6ff 60%, #e8f7ff 100%);
+        }
+        #world-sky-sunset {
+          background: linear-gradient(180deg, #f5a07a 0%, #ffc98f 55%, #ffe7b0 100%);
+          opacity: 0;
+        }
+        #world-sky-dusk {
+          background: linear-gradient(180deg, #4b3f7a 0%, #8a5c8f 55%, #d98a7a 100%);
+          opacity: 0;
+        }
+        #world-sun {
+          position: absolute;
+          left: 1380px;
+          top: 90px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: radial-gradient(circle, #fff6b8 0%, #ffd84d 55%, #ffb83d 100%);
+          box-shadow: 0 0 80px 30px rgba(255, 214, 90, 0.45);
+        }
+        .world-cloud {
+          position: absolute;
+          width: 300px;
+          height: 110px;
+        }
+        #world-cloud-a {
+          left: 180px;
+          top: 120px;
+        }
+        #world-cloud-b {
+          left: 820px;
+          top: 210px;
+          width: 220px;
+          height: 80px;
+        }
+        #world-cloud-c {
+          left: 1560px;
+          top: 360px;
+          width: 180px;
+          height: 66px;
+        }
+        #world-land {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1920px;
+          height: 1080px;
+        }
+        #world-dim {
+          position: absolute;
+          inset: 0;
+          background: #1d1640;
+          opacity: 0;
+        }
+      </style>
+
+      <div id="root" data-composition-id="world" data-width="1920" data-height="1080">
+        <div id="world-sky-day"></div>
+        <div id="world-sky-sunset"></div>
+        <div id="world-sky-dusk"></div>
+        <div id="world-sun"></div>
+
+        <svg id="world-cloud-a" class="world-cloud" viewBox="0 0 300 110">
+          <path d="M40 100 Q0 100 10 70 Q20 40 60 50 Q70 10 120 15 Q165 0 185 40 Q230 20 255 55 Q300 60 285 90 Q280 100 250 100 Z" fill="#ffffff" opacity="0.92" />
+        </svg>
+        <svg id="world-cloud-b" class="world-cloud" viewBox="0 0 300 110">
+          <path d="M40 100 Q0 100 10 70 Q20 40 60 50 Q70 10 120 15 Q165 0 185 40 Q230 20 255 55 Q300 60 285 90 Q280 100 250 100 Z" fill="#ffffff" opacity="0.85" />
+        </svg>
+        <svg id="world-cloud-c" class="world-cloud" viewBox="0 0 300 110">
+          <path d="M40 100 Q0 100 10 70 Q20 40 60 50 Q70 10 120 15 Q165 0 185 40 Q230 20 255 55 Q300 60 285 90 Q280 100 250 100 Z" fill="#ffffff" opacity="0.8" />
+        </svg>
+
+        <svg id="world-land" viewBox="0 0 1920 1080">
+          <!-- far hills -->
+          <path d="M0 760 Q240 600 520 700 Q780 790 1040 690 Q1320 590 1600 700 Q1780 760 1920 690 L1920 1080 L0 1080 Z" fill="#8cc97a" />
+          <!-- near hills -->
+          <path d="M0 830 Q300 740 640 810 Q980 880 1300 800 Q1620 730 1920 820 L1920 1080 L0 1080 Z" fill="#6fb85e" />
+          <!-- grass ground -->
+          <path d="M0 880 Q480 850 960 875 Q1440 900 1920 870 L1920 1080 L0 1080 Z" fill="#5aa64c" />
+          <!-- flowers along the near edge -->
+          <g>
+            <circle cx="120" cy="1000" r="14" fill="#ff8fab" />
+            <circle cx="120" cy="1000" r="5" fill="#ffe066" />
+            <circle cx="380" cy="1040" r="12" fill="#ffffff" />
+            <circle cx="380" cy="1040" r="4" fill="#ffd43b" />
+            <circle cx="760" cy="1010" r="13" fill="#b197fc" />
+            <circle cx="760" cy="1010" r="5" fill="#ffe066" />
+            <circle cx="1180" cy="1045" r="12" fill="#ff8fab" />
+            <circle cx="1180" cy="1045" r="4" fill="#ffe066" />
+            <circle cx="1560" cy="1005" r="14" fill="#ffffff" />
+            <circle cx="1560" cy="1005" r="5" fill="#ffd43b" />
+            <circle cx="1830" cy="1040" r="12" fill="#b197fc" />
+            <circle cx="1830" cy="1040" r="4" fill="#ffe066" />
+          </g>
+        </svg>
+        <div id="world-dim"></div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // The sun sets across the story and touches the hills at ~73s (scene 7).
+        tl.fromTo("#world-sun", { y: 0 }, { y: 350, duration: 73, ease: "none" }, 0);
+        tl.to("#world-sun", { y: 720, duration: 25, ease: "none" }, 73);
+        tl.to("#world-sky-sunset", { opacity: 1, duration: 23, ease: "sine.inOut" }, 50);
+        tl.to("#world-sky-dusk", { opacity: 0.85, duration: 16, ease: "sine.inOut" }, 82);
+        tl.to("#world-dim", { opacity: 0.18, duration: 16, ease: "sine.inOut" }, 82);
+        // Clouds drift slowly.
+        tl.fromTo("#world-cloud-a", { x: 0 }, { x: 420, duration: 98, ease: "none" }, 0);
+        tl.fromTo("#world-cloud-b", { x: 0 }, { x: 300, duration: 98, ease: "none" }, 0);
+        tl.fromTo("#world-cloud-c", { x: 0 }, { x: -240, duration: 98, ease: "none" }, 0);
+        window.__timelines["world"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

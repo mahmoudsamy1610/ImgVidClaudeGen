@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-arabic-800-normal.woff2") format("woff2");
+          unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+        }
+        @font-face {
+          font-family: "Baloo Bhaijaan 2";
+          font-style: normal;
+          font-weight: 800;
+          src: url("assets/fonts/baloo-bhaijaan-2-latin-800-normal.woff2") format("woff2");
+          unicode-range: U+0000-00FF, U+2000-206F;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+        .stage {
+          position: absolute;
+          inset: 0;
+        }
+        .benny {
+          position: absolute;
+          width: 330px;
+          height: 230px;
+        }
+        .benny-art {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 330px;
+          height: 230px;
+        }
+        .leaf {
+          position: absolute;
+          left: 62px;
+          top: -64px;
+          width: 150px;
+          height: 104px;
+        }
+        .ladybug {
+          position: absolute;
+          width: 220px;
+          height: 170px;
+        }
+        .rabbit {
+          position: absolute;
+          width: 240px;
+          height: 290px;
+        }
+        .squirrel {
+          position: absolute;
+          width: 260px;
+          height: 260px;
+        }
+        .mouse {
+          position: absolute;
+          width: 190px;
+          height: 230px;
+        }
+        .prop {
+          position: absolute;
+        }
+        .bubble {
+          position: absolute;
+          background: #ffffff;
+          color: #3b2a55;
+          font-weight: 800;
+          font-size: 56px;
+          line-height: 1.35;
+          padding: 14px 44px 18px;
+          border-radius: 48px;
+          box-shadow: 0 10px 0 rgba(59, 42, 85, 0.12);
+          white-space: nowrap;
+        }
+        .bubble::after {
+          content: "";
+          position: absolute;
+          left: 70px;
+          bottom: -26px;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+          border-top: 30px solid #ffffff;
+        }
+        .sparkle {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+        }
+
+      </style>
+
+      <div id="root" data-composition-id="s4-rabbit" data-width="1920" data-height="1080">
+        <div id="s4-rabbit-stage" class="stage">
+        
+        <svg id="s4-rabbit-carrots" class="prop" style="left: 1460px; top: 820px; width: 260px; height: 140px; overflow: visible" viewBox="0 0 260 140">
+          <path d="M24 40 L56 40 L40 120 Z" fill="#ff922b" stroke="#e8590c" stroke-width="4" stroke-linejoin="round" /><path d="M40 40 Q18 4 26 0 M40 40 Q40 0 44 -6 M40 40 Q60 6 58 0" stroke="#40a03b" stroke-width="8" fill="none" stroke-linecap="round" /><path d="M104 40 L136 40 L120 120 Z" fill="#ff922b" stroke="#e8590c" stroke-width="4" stroke-linejoin="round" /><path d="M120 40 Q98 4 106 0 M120 40 Q120 0 124 -6 M120 40 Q140 6 138 0" stroke="#40a03b" stroke-width="8" fill="none" stroke-linecap="round" /><path d="M184 40 L216 40 L200 120 Z" fill="#ff922b" stroke="#e8590c" stroke-width="4" stroke-linejoin="round" /><path d="M200 40 Q178 4 186 0 M200 40 Q200 0 204 -6 M200 40 Q220 6 218 0" stroke="#40a03b" stroke-width="8" fill="none" stroke-linecap="round" />
+        </svg>
+        
+        <div id="s4-rabbit-benny" class="benny" style="left: 160px; top: 700px; transform: scale(0.8); transform-origin: 50% 100%">
+          <svg id="s4-rabbit-benny-art" class="benny-art" viewBox="0 0 330 230">
+            <rect x="20" y="160" width="290" height="48" rx="24" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <ellipse cx="262" cy="140" rx="40" ry="58" fill="#b9e27a" stroke="#8cbf4f" stroke-width="4" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#8cbf4f" stroke-width="11" stroke-linecap="round" />
+            <line x1="250" y1="96" x2="236" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <line x1="274" y1="96" x2="290" y2="42" stroke="#b9e27a" stroke-width="6" stroke-linecap="round" />
+            <circle cx="236" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="290" cy="36" r="17" fill="#ffffff" stroke="#3b2a55" stroke-width="3" />
+            <circle cx="240" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="294" cy="38" r="8" fill="#3b2a55" />
+            <circle cx="243" cy="34" r="3" fill="#ffffff" />
+            <circle cx="297" cy="34" r="3" fill="#ffffff" />
+            <circle cx="292" cy="140" r="9" fill="#ff9eb5" opacity="0.8" />
+            <path d="M246 148 Q262 166 280 148" stroke="#3b2a55" stroke-width="5" fill="none" stroke-linecap="round" />
+            <circle cx="135" cy="118" r="82" fill="#f4a259" stroke="#c8652a" stroke-width="6" />
+            <path d="M127 118 a8 8 0 1 1 16 0 a18 18 0 1 1 -36 0 a32 32 0 1 1 64 0 a48 48 0 1 1 -96 0" stroke="#c8652a" stroke-width="7" fill="none" stroke-linecap="round" />
+          </svg>
+          <svg id="s4-rabbit-leaf" class="leaf" viewBox="0 0 150 104">
+            <path d="M8 84 Q36 4 144 18 Q118 102 8 84 Z" fill="#4caf50" stroke="#2e7d32" stroke-width="4" />
+            <path d="M14 82 Q78 54 138 22" stroke="#2e7d32" stroke-width="3" fill="none" />
+            <path d="M76 52 L50 34 L52 70 Z" fill="#ff6fa5" stroke="#d6457f" stroke-width="3" stroke-linejoin="round" />
+            <path d="M76 52 L102 34 L100 70 Z" fill="#ff6fa5" stroke="#d6457f" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="76" cy="52" r="9" fill="#ff8fbf" stroke="#d6457f" stroke-width="3" />
+          </svg>
+        </div>
+        
+        <div id="s4-rabbit-rabbit" class="rabbit" style="left: 600px; top: 620px">
+          <svg viewBox="0 0 240 290" width="240" height="290" style="overflow: visible">
+            <ellipse cx="150" cy="40" rx="18" ry="62" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" transform="rotate(-12 150 90)" />
+            <ellipse cx="150" cy="40" rx="8" ry="46" fill="#ffc2d1" transform="rotate(-12 150 90)" />
+            <ellipse cx="190" cy="44" rx="18" ry="62" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" transform="rotate(14 190 96)" />
+            <ellipse cx="190" cy="44" rx="8" ry="46" fill="#ffc2d1" transform="rotate(14 190 96)" />
+            <ellipse cx="110" cy="210" rx="88" ry="68" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" />
+            <circle cx="28" cy="200" r="22" fill="#ffffff" stroke="#c9c2bb" stroke-width="4" />
+            <ellipse cx="80" cy="272" rx="34" ry="14" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" />
+            <ellipse cx="160" cy="274" rx="30" ry="13" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" />
+            <circle cx="172" cy="140" r="54" fill="#f4f1ee" stroke="#c9c2bb" stroke-width="4" />
+            <circle cx="188" cy="128" r="8" fill="#3b2a55" />
+            <circle cx="191" cy="125" r="3" fill="#ffffff" />
+            <ellipse cx="222" cy="148" rx="8" ry="6" fill="#ff8fab" />
+            <path d="M206 162 Q214 170 224 162" stroke="#3b2a55" stroke-width="4" fill="none" stroke-linecap="round" />
+            <circle cx="196" cy="156" r="8" fill="#ffb3c6" opacity="0.8" />
+          </svg>
+        </div>
+        <div id="s4-rabbit-bubble" class="bubble" dir="rtl" lang="ar" style="left: 720px; top: 420px">بطيء قوي يا بيني!</div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s4-rabbit-stage", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.out" }, 0);
+        tl.to("#s4-rabbit-stage", { opacity: 0, duration: 0.4, ease: "sine.in" }, 14.6);
+        tl.fromTo("#s4-rabbit-benny", { x: 0 }, { x: 260, duration: 14.4, ease: "none" }, 0.2);
+        tl.to("#s4-rabbit-benny-art", { scaleX: 1.05, scaleY: 0.96, transformOrigin: "50% 100%", duration: 0.250, ease: "sine.inOut", repeat: 27, yoyo: true }, 0.2);
+        // "جه الأرنب" - hops in
+        tl.set("#s4-rabbit-rabbit", { x: -700, y: 0 }, 0);
+        tl.to("#s4-rabbit-rabbit", { x: 0, duration: 1.2, ease: "power2.out" }, 0.5);
+        tl.to("#s4-rabbit-rabbit", { y: -60, duration: 0.2, ease: "sine.out", yoyo: true, repeat: 5 }, 0.5);
+        // «إنت بطيء قوي يا بيني! بص عليّا!»
+        tl.fromTo("#s4-rabbit-bubble", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 2.6);
+        tl.to("#s4-rabbit-bubble", { opacity: 0, duration: 0.25 }, 6.8);
+        // "وجري زي الصاروخ"
+        tl.to("#s4-rabbit-rabbit", { x: 680, duration: 0.6, ease: "power3.in" }, 7.2);
+        // "بس الأرنب لقى جزر مقرمش، فوقف ياكل"
+        tl.to("#s4-rabbit-rabbit", { x: 740, duration: 0.5, ease: "power2.out" }, 9.8);
+        tl.fromTo("#s4-rabbit-carrots", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 10.0);
+        tl.to("#s4-rabbit-rabbit", { rotation: 6, transformOrigin: "50% 100%", duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 11 }, 12.7);
+
+        window.__timelines["s4-rabbit"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

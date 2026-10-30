@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Carlito"; font-weight: 400; src: url("assets/fonts/carlito-latin-400-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Carlito"; font-weight: 700; src: url("assets/fonts/carlito-latin-700-normal.woff2") format("woff2"); }
+        @font-face { font-family: "Noto Sans"; font-weight: 800; src: url("assets/fonts/noto-sans-latin-800-normal.woff2") format("woff2"); }
+
+        #root { position: absolute; inset: 0; overflow: hidden; font-family: "Carlito", sans-serif; color: #1a1a1a; }
+        .stage { position: absolute; inset: 0; }
+        .kicker {
+          position: absolute;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #00539B;
+          padding-bottom: 6px;
+          border-bottom: 3px solid #FDBB30;
+        }
+        .title {
+          position: absolute;
+          font-size: 64px;
+          font-weight: 700;
+          line-height: 1.1;
+          color: #00539B;
+          padding-left: 34px;
+        }
+        .title::before { content: ""; position: absolute; left: 0; top: 0.12em; bottom: 0.14em; width: 9px; background: #FDBB30; }
+        .lede { position: absolute; font-size: 32px; line-height: 1.5; color: #6b6b6b; }
+        .node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 8px;
+          padding: 18px 12px;
+          border: 2px solid;
+        }
+        .node-t { font-size: 27px; font-weight: 700; line-height: 1.15; }
+        .node-s { font-size: 20px; line-height: 1.25; color: #6b6b6b; }
+        .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; }
+        .arrow-l { font-size: 19px; font-weight: 700; color: #6b6b6b; text-align: center; line-height: 1.15; }
+        .arrow-bar { position: relative; height: 4px; background: linear-gradient(90deg, #c6d2e0, #00539B); transform-origin: 0 50%; }
+        .arrow-bar::after { content: ""; position: absolute; right: -3px; top: 50%; margin-top: -8px; border-left: 13px solid #00539B; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+        .branch { display: flex; flex-direction: column; gap: 18px; padding-left: 22px; border-left: 4px solid #c6d2e0; flex-shrink: 0; }
+        .gatebar {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 24px 32px;
+          background: #fff6d8;
+          border: 3px solid #e0a400;
+        }
+        .gate-t { font-size: 28px; font-weight: 700; letter-spacing: 0.06em; color: #8a5f00; }
+        .gate-s { font-size: 27px; color: #4d4d4d; margin-top: 2px; }
+        .note { position: absolute; font-size: 32px; line-height: 1.45; color: #4d4d4d; text-align: center; }
+        .hatb { display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; padding: 8px 16px; border: 2px solid; }
+
+        #root { background: #00539B; }
+        .office { position: absolute; inset: 0; width: 1920px; height: 1080px; object-fit: cover; opacity: 0.12; }
+        .unused-wedge { position: absolute; inset: 0; background: #ffffff; clip-path: polygon(0 0, 49.7% 0, 79.4% 100%, 0 100%); }
+      </style>
+
+      <div id="root" data-composition-id="s10-close" data-width="1920" data-height="1080">
+        <div id="s10-close-stage" class="stage">
+        <img class="office" src="assets/images/office.jpg" alt="" />
+        <div id="s10-close-title" style="position: absolute; left: 0; right: 0; top: 330px; text-align: center; font-size: 104px; font-weight: 700; color: #ffffff">AI-Driven <span style="color: #FDBB30">QA Engine</span></div>
+        <div id="s10-close-sub" style="position: absolute; left: 0; right: 0; top: 480px; text-align: center; font-size: 40px; color: #ffffff">Faster · more consistent · human in the loop</div>
+        <div id="s10-close-rule" style="position: absolute; left: 860px; top: 570px; width: 200px; height: 6px; background: #FDBB30"></div>
+        <img id="s10-close-logo" src="assets/images/ihorizons-logo-white.png" alt="iHorizons" style="position: absolute; left: 810px; top: 680px; width: 300px" />
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s10-close-stage", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "sine.out" }, 0);
+        tl.fromTo("#s10-close-title", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+        tl.fromTo("#s10-close-sub", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.8);
+        tl.fromTo("#s10-close-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 1.1);
+        tl.fromTo("#s10-close-logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.4);
+        tl.to("#s10-close-stage", { opacity: 0, duration: 0.7, ease: "sine.in" }, 4.8);
+
+        window.__timelines["s10-close"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

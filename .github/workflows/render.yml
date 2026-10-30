@@ -1,13 +1,20 @@
-name: Render video
+name: Render videos
 
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "**"
     tags:
       - "v*"
 
 permissions:
-  contents: write # needed to create a release and attach video.mp4 on tag pushes
+  contents: write # needed to publish preview and version releases with the videos
+
+# A newer push to the same branch cancels a render that is still running.
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   # Keep in sync with the version pinned in package.json scripts.
@@ -15,7 +22,36 @@ env:
 
 jobs:
   render:
+    name: Render ${{ matrix.name }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # The Arabic children's story (repo root)
+          - name: story
+            dir: .
+            file: video.mp4
+            artifact: video
+            preview_prefix: preview
+          # Mahmoud Samy's video CV
+          - name: intro
+            dir: videos/mahmoud-intro
+            file: mahmoud-intro.mp4
+            artifact: mahmoud-intro
+            preview_prefix: intro-preview
+          # QA Engine walkthrough (animated qa-engine-map diagram)
+          - name: qa-engine
+            dir: videos/qa-engine
+            file: qa-engine.mp4
+            artifact: qa-engine
+            preview_prefix: qa-engine-preview
+          # AI-Driven QA Engine presentation (board deck, iHorizons design)
+          - name: qa-engine-board
+            dir: videos/qa-engine-board
+            file: qa-engine-board.mp4
+            artifact: qa-engine-board
+            preview_prefix: qa-board-preview
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -34,20 +70,61 @@ jobs:
         run: npx --yes hyperframes@${HYPERFRAMES_VERSION} browser ensure
 
       - name: Lint composition
+        working-directory: ${{ matrix.dir }}
         run: npx --yes hyperframes@${HYPERFRAMES_VERSION} lint
 
       - name: Render video
-        run: npx --yes hyperframes@${HYPERFRAMES_VERSION} render --quality high --output video.mp4
+        working-directory: ${{ matrix.dir }}
+        run: npx --yes hyperframes@${HYPERFRAMES_VERSION} render --quality high --output "$GITHUB_WORKSPACE/${{ matrix.file }}"
 
       - name: Upload video artifact
+        id: artifact
         uses: actions/upload-artifact@v4
         with:
-          name: video
-          path: video.mp4
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.file }}
           if-no-files-found: error
+
+      # Every branch push replaces that branch's preview pre-release, so its
+      # download link stays the same and always serves the latest render.
+      - name: Publish branch preview release
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          PREFIX: ${{ matrix.preview_prefix }}
+          FILE: ${{ matrix.file }}
+          NAME: ${{ matrix.name }}
+        run: |
+          TAG="${PREFIX}-${BRANCH//\//-}"
+          gh release delete "$TAG" --cleanup-tag --yes || true
+          gh release create "$TAG" "$FILE" \
+            --prerelease \
+            --target "$GITHUB_SHA" \
+            --title "Preview ($NAME): $BRANCH" \
+            --notes "Latest $NAME render of \`$BRANCH\` at commit $GITHUB_SHA."
+          echo "PREVIEW_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$TAG/$FILE" >> "$GITHUB_ENV"
 
       - name: Attach video to GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: video.mp4
+          files: ${{ matrix.file }}
+
+      - name: Write download links to run summary
+        env:
+          ARTIFACT_URL: ${{ steps.artifact.outputs.artifact-url }}
+          NAME: ${{ matrix.name }}
+        run: |
+          {
+            echo "## Download the $NAME video"
+            echo ""
+            echo "- Artifact for this run (zip): $ARTIFACT_URL"
+            if [ -n "${PREVIEW_URL:-}" ]; then
+              echo "- Latest MP4 for \`$GITHUB_REF_NAME\` (stable link): $PREVIEW_URL"
+            fi
+            if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+              echo "- Release: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$GITHUB_REF_NAME"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

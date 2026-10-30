@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0b1020;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mahmoud Samy - a 51s video CV: intro, iHorizons, Softxpert, Ten Degrees, skills & tools, certifications, agentic AI QA, contact. -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="51"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <!-- Track 0: animated background for the whole video -->
+      <div id="bg" class="clip" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="51" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 1: scenes -->
+      <div id="s1-intro" class="clip" data-composition-id="s1-intro" data-composition-src="compositions/s1-intro.html" data-start="0" data-duration="4.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s2-ihorizons" class="clip" data-composition-id="s2-ihorizons" data-composition-src="compositions/s2-ihorizons.html" data-start="4.5" data-duration="8.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s3-softxpert" class="clip" data-composition-id="s3-softxpert" data-composition-src="compositions/s3-softxpert.html" data-start="13" data-duration="10" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s4-tendegrees" class="clip" data-composition-id="s4-tendegrees" data-composition-src="compositions/s4-tendegrees.html" data-start="23" data-duration="4" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s5-tools" class="clip" data-composition-id="s5-tools" data-composition-src="compositions/s5-tools.html" data-start="27" data-duration="8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s6-certs" class="clip" data-composition-id="s6-certs" data-composition-src="compositions/s6-certs.html" data-start="35" data-duration="4.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s7-ai" class="clip" data-composition-id="s7-ai" data-composition-src="compositions/s7-ai.html" data-start="39.5" data-duration="7.5" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="s8-connect" class="clip" data-composition-id="s8-connect" data-composition-src="compositions/s8-connect.html" data-start="47" data-duration="4" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Track 3: a soft whoosh on each scene change, a chime on the contact card -->
+      <audio id="sfx-whoosh-1" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="4.35" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-2" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="12.85" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-3" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="22.85" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-4" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="26.85" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-5" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="34.85" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-6" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="39.35" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-whoosh-7" data-audio-group="sfx" src="assets/audio/sfx/whoosh-short.mp3" data-start="46.85" data-duration="0.57" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-end-chime" data-audio-group="sfx" src="assets/audio/sfx/chime.mp3" data-start="47.6" data-duration="2.5" data-track-index="3" data-volume="0.4"></audio>
+
+      <!-- Track 4: original music bed (tools/music.py) -->
+      <audio id="music-bed" data-audio-group="music" src="assets/audio/music/bed.mp3" data-start="0" data-duration="51" data-track-index="4" data-volume="0.8"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
